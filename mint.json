@@ -61,7 +61,13 @@
           "pages": [
             "ai-agents/knowledge-base",
             "ai-agents/memories",
-            "ai-agents/system-message",
+            {
+              "group": "System Message",
+              "pages": [
+                "ai-agents/system-message",
+                "ai-agents/prompt-best-practices"
+              ]
+            },
             "ai-agents/tools",
             "ai-agents/ai-teammates",
             "ai-agents/triggers",
@@ -75,6 +81,22 @@
     {
       "group": "API Documentation",
       "pages": ["invicta-ai-api/overview"]
+    },
+    {
+      "group": "Help",
+      "pages": [
+        "help/how-can-i-contact-the-invicta-ai-team",
+        {
+          "group": "FAQs",
+          "icon": "life-ring",
+          "pages": [
+            "help/how-secure-is-my-data",
+            "help/can-I-try-Invicta-AI-for-free",
+            "help/can-i-use-my-own-LLM-API-key",
+            "help/does-invicta-ai-use-my-conversations-or-data-to-train-ai"
+          ]
+        }
+      ]
     }
   ],
   "footerSocials": {

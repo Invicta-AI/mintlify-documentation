@@ -1,0 +1,139 @@
+---
+title: "Prompt Best Practices"
+---
+
+Best practices for prompt engineering apply to both the system message and the prompts you send to the AI agents.
+
+**1. Put instructions at the beginning of the prompt and use markdown headers or code blocks to separate the instruction and context**
+
+Less effective ❌:
+
+```md
+Summarize the text below as a bullet point list of the most important points.
+
+{text input here}
+```
+
+Better ✅:
+
+```md
+Summarize the text below as a bullet point list of the most important points.
+
+Text: 
+"""
+{text input here}
+"""
+```
+<br />
+<br />
+
+**2. Be specific, descriptive and as detailed as possible about the desired context, outcome, length, format, style etc**
+
+Less effective ❌:
+```md
+Write a poem about OpenAI. 
+```
+
+Better ✅:
+```md
+Write a short inspiring poem about OpenAI, focusing on the recent DALL-E product launch (DALL-E is a text to image ML model) in the style of a {famous poet}
+```
+
+<br />
+<br />
+
+**3. Articulate the desired output format through examples**
+
+Less effective ❌:
+```md
+Extract the entities mentioned in the text below. Extract the following 4 entity types: company names, people names, specific topics and themes.
+```
+
+Better ✅:
+```md
+Extract the important entities mentioned in the text below. First extract all company names, then extract all people names, then extract specific topics which fit the content and finally extract general overarching themes.
+```
+
+<br />
+<br />
+
+**4. Try using zero-shot and few-shot examples**
+
+Use zero-shot for simple tasks and few-shot for more complex ones. If neither work, consider fine-tuning the model.
+
+Example of Zero-shot:
+```md
+Extract keywords from the below text.
+```
+
+Example of Few-shot:
+```md
+Extract keywords from the corresponding texts below.
+```
+
+<br />
+<br />
+
+**5. Reduce “fluffy” and imprecise descriptions. Be clear and succinct in your instructions.**
+
+Less effective ❌:
+```md
+The description for this product should be fairly short, a few sentences only, and not too much more.
+```
+
+Better ✅:
+```md
+Use a 3 to 5 sentence paragraph to describe this product.
+```
+
+<br />
+<br />
+
+**6. Instead of just saying what not to do, say what to do instead**
+
+Avoid negative instructions, and provide clear guidance on what actions should be taken.
+
+Less effective ❌:
+```md
+The following is a conversation between an Agent and a Customer. DO NOT ASK USERNAME OR PASSWORD. DO NOT REPEAT.
+
+Customer: I can’t log in to my account.
+Agent:
+```
+
+Better ✅:
+```md
+The following is a conversation between an Agent and a Customer. The agent will attempt to diagnose the problem and suggest a solution, whilst refraining from asking any questions related to PII. Instead of asking for PII, such as username or password, refer the user to the help article www.samplewebsite.com/help/faq
+
+Customer: I can’t log in to my account.
+Agent:
+```
+
+<br />
+<br />
+
+**7. Code Generation Specific - Use “leading words” to nudge the model toward a particular pattern**
+
+Less effective ❌:
+```python
+# Write a simple python function that
+# 1. Ask me for a number in mile
+# 2. It converts miles to kilometers
+```
+
+In this code example below, adding “import” hints to the model that it should start writing in Python. (Similarly “SELECT” is a good hint for the start of a SQL statement.) 
+
+Better ✅:
+```python
+# Write a simple python function that
+# 1. Ask me for a number in mile
+# 2. It converts miles to kilometers
+
+import
+```
+
+### Resources
+
+OpenAI, [Best practices for prompt engineering with OpenAI API](https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-openai-api)
+
+Prompt Hub, [10 Best Practices for Prompt Engineering with Any Model](https://www.prompthub.us/blog/10-best-practices-for-prompt-engineering-with-any-model)
