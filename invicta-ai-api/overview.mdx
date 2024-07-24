@@ -1,0 +1,127 @@
+Welcome to the Invicta AI API documentation. This API allows you to interact with our AI agents programmatically, enabling seamless integration of our advanced AI capabilities into your applications and workflows.
+
+## Introduction
+
+The Invicta AI API provides a simple and powerful way to send prompts to our AI agents and receive intelligent responses. Whether you're building a chatbot, automating customer support, or creating innovative AI-powered applications, our API offers the flexibility and functionality you need.
+
+## Authentication
+
+All API requests require authentication using an API key. You must include your API key in the `X-INVICTA-API` header for each request.
+
+## Base URL
+
+All API requests should be made to:
+
+```
+https://api.invictai.io/api
+```
+
+## Endpoints
+
+### Send Prompt
+
+This endpoint allows you to send a prompt to an AI agent and receive a response.
+
+#### HTTP Request
+
+```http
+POST /triggers/webhooks/api-key/{AI_AGENT_ID}
+```
+
+#### Headers
+
+| Header         | Type   | Required | Description                              |
+|----------------|--------|----------|------------------------------------------|
+| X-INVICTA-API  | string | Yes      | Your unique API key for authentication   |
+| Content-Type   | string | Yes      | Must be set to `application/json`        |
+
+#### Request Body Parameters
+
+| Parameter | Type   | Required | Description                                  |
+|-----------|--------|----------|----------------------------------------------|
+| userInput | string | Yes      | The prompt for the AI agent                  |
+| variables | array  | Yes      | Key-value pairs for customizing the system prompt |
+| threadId  | string | No       | Identifier for maintaining conversation context |
+| modelName | string | No       | Specific AI model to use for the response    |
+
+##### Variables Array Structure
+
+```json
+[
+  {
+    "key": "string",
+    "value": "string or number"
+  }
+]
+```
+
+#### Example Request
+
+```curl
+curl -X POST https://api.invictai.io/api/triggers/webhooks/api-key/{AI_AGENT_ID} \
+-H "Content-Type: application/json" \
+-H "X-INVICTA-API: your-api-key-here" \
+-d '{
+  "userInput": "What kind of assistance can the AI provide on the website?",
+  "threadId": "bdd3a319-af01-494f-bc86-892bd41c3e21",
+  "modelName": "gpt-4",
+  "variables": []
+}'
+```
+
+#### Response
+
+The API returns a JSON object with the following structure:
+
+```typescript
+{
+  "id": number,
+  "prompt": string,
+  "response": string,
+  "communityId": string | null,
+  "userId": number | null,
+  "liked": boolean | null,
+  "totalTokens": number | null,
+  "cp_cost": number,
+  "savedToMemory": boolean,
+  "csv_request_id": string | null,
+  "ai_agent_request_id": number | null,
+  "modelName": string | null,
+  "threadId": string | null,
+  "createdAt": Date,
+  "updatedAt": Date
+}
+```
+
+## Error Handling
+
+The API uses standard HTTP status codes to indicate the success or failure of a request.
+
+| Status Code | Meaning                |
+|-------------|------------------------|
+| 200         | OK                     |
+| 400         | Bad Request            |
+| 401         | Unauthorized           |
+| 404         | Not Found              |
+| 500         | Internal Server Error  |
+
+### Example Error Response
+
+```json
+{
+  "error": {
+    "code": "invalid_request_error",
+    "message": "Invalid parameter provided"
+  }
+}
+```
+
+## Best Practices
+
+1. Always use HTTPS for secure communication.
+2. Store your API key securely and never expose it in client-side code.
+3. Implement proper error handling in your application to gracefully manage API errors.
+4. Use the `threadId` parameter for maintaining context in multi-turn conversations.
+5. Consider rate limiting and implement retries with exponential backoff for robust integration.
+
+For any additional support or questions, please contact our developer support team at support@invictai.io.
