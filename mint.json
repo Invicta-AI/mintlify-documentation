@@ -45,7 +45,32 @@
   "navigation": [
     {
       "group": "Basics",
-      "pages": ["introduction", "basics/compute-points", "basics/available-llms"]
+      "pages": [
+        "introduction",
+        "basics/compute-points",
+        "basics/available-llms"
+      ]
+    },
+    {
+      "group": "AI Agents",
+      "pages": [
+        "ai-agents/overview",
+        {
+          "group": "Components",
+          "icon": "gear",
+          "pages": [
+            "ai-agents/knowledge-base",
+            "ai-agents/memories",
+            "ai-agents/system-message",
+            "ai-agents/tools",
+            "ai-agents/ai-teammates",
+            "ai-agents/triggers",
+            "ai-agents/variables",
+            "ai-agents/llm-settings",
+            "ai-agents/batch-mode"
+          ]
+        }
+      ]
     },
     {
       "group": "API Documentation",

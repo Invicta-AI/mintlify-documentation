@@ -1,0 +1,31 @@
+## Overview
+Variables in Invicta AI are dynamic elements within system messages that facilitate the creation of interactive and personalized AI agents. They act as placeholders within system messages, which are replaced with user responses when interacting with the AI agent, leading to a unique and customized user experience.
+
+## Usage
+
+In the Invicta AI User Interface (UI), including widgets and embeddings, a user is posed with questions upon their initial interaction with the AI agent. The user's responses to these questions replace the variables within the system message. 
+
+## Example
+
+For example, consider a system message: 
+
+```md
+"Write {number} different variants of personalised emails for {name}."
+```
+
+The AI agent can pose questions such as "How many emails do you want to generate?" and "Who is the email for?" Depending on the user's responses, the system message will be transformed into: 
+
+```md
+"Write 5 different variants of personalised emails for James Baldwin."
+```
+
+## Functionality
+
+While Variables are displayed as answers to questions exclusively in Invicta AI UI, embeddings, and widgets, they also play an essential role in APIs and Automations. For APIs and Automations, however, the process differs – user responses aren't collected through direct questioning but through alternative means of data input. This makes Variables a versatile tool in creating dynamic AI agents capable of delivering personalized output.
+
+## Use Cases
+
+Variables can be crucially applied in numerous tasks such as:
+- Crafting automated sales emails.
+- Generating personalized recommendations.
+- Conducting analyses of customer satisfaction surveys.
