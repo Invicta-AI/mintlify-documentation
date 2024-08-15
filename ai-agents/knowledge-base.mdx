@@ -1,7 +1,3 @@
-The Knowledge Base within our AI Agents platform is a critical component that serves as the informational foundation for our agents, enabling them to access, retrieve, and utilize data effectively in their interactions and tasks. This documentation will provide an in-depth explanation of the Knowledge Base, its features, and how it integrates with data sources such as Google Drive to ensure real-time synchronization.
-
-## Introduction to Knowledge Base
-
 The Knowledge Base is a repository where various types of data are stored and managed to support the intelligence and responsiveness of AI agents. It contains structured and unstructured data including text documents, spreadsheets, web links, and other file types, which can be leveraged by the agents for various purposes.
 
 ### Key Features:
@@ -11,26 +7,39 @@ The Knowledge Base is a repository where various types of data are stored and ma
 - **Agent-Specific Silos**: Data can be sectioned into silos per agent, restricting access and preventing unintended sharing of sensitive information.
 - **Continuous Improvement**: The system employs mechanisms for self-improvement by regularly updating indexing, retrieval, generation, and action success metrics.
 
+<Note>
+  Note: If files within the AI Agent's Knowledge Base are large, it will only
+  retrieve chunks from it. To use the entire file, you can either: 
+  1. Attach the
+  file in the chat, which will use the whole document. 
+  2. In the chat, use the "@" to mention
+  specific knowledge base files, which will again, use the whole file.
+</Note>
+
 ## Real-Time Synchronization
 
 One of the paramount features of our Knowledge Base is its capability to stay in sync with connected data sources like Google Drive. When updates or modifications are made to files within these sources, our platform ensures that these changes are mirrored promptly in the Knowledge Base. This feature ensures that AI agents are operating with the most up-to-date information available without manual intervention.
 
 ## Managing Your Knowledge Base
 
-### Adding Data Sources
-
-To add a new data source to your Knowledge Base:
-
-1. Navigate to the 'Knowledge Base' button in your AI Agent chat interface or go to the AI Builder,
-   <div className="aspect-ratio-16-9">![image](.ai-agents/knowledge_base_point.png)</div>
-2. Choose one of the available data sources from the list of available options.
-   <div className="aspect-ratio-16-9">
-     ![image](./knowledge_base_chat.png)
-   </div>
-   <div className="aspect-ratio-16-9">
-     ![image](./knowledge_base_builder.png)
-   </div>
-3. Select which files you wish to upload or follow the prompts to authorize your account first.
+1.  Click the 'Knowledge Base' button in your AI Agent chat interface or go to the AI Agent Builder.
+    <img
+      className="rounded-xl"
+      src="/ai-agents/step-1.png"
+      alt="Knowledge Base Button"
+    />
+2.  Select the specific file type you would like to upload and follow the instructions.
+    <img
+      className="rounded-xl"
+      src="/ai-agents/step-2.png"
+      alt="Knowledge Base Upload"
+    />
+3.  Enable the specific knowledge base entries you want this AI Agent to access and click "Save changes". Note that the Agent will only be aware of the files you have enabled for it.
+    <img
+      src="/ai-agents/step-3.png"
+      className="rounded-xl"
+      alt="Knowledge Base Enabled/Disabled"
+    />
 
 ## Conclusion
 
