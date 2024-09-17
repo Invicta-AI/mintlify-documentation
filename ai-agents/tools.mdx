@@ -1,29 +1,171 @@
 ## Overview
 
-Tools in our AI Agents platform extend the capabilities of our agents, allowing them to perform a wide variety of tasks and actions efficiently. These tools enable agents to interact with external systems, perform complex operations, and automate workflows, enhancing their utility and effectiveness in various roles.
+Tools in the Invicta AI platform extend the capabilities of our agents, allowing them to perform a wide variety of tasks and actions efficiently. These tools enable agents to interact with external systems, perform complex operations, and automate workflows, enhancing their utility and effectiveness in various roles.
 
-## Examples of Tool Capabilities
+## Important Considerations
 
-While we continually add more tools, here are some examples of what tools can enable our agents to do:
+<Tip>
+**Tip**
 
-- **Web Browsing**: Agents can browse the internet to retrieve information or perform research.
-- **Email Management**: Agents can send emails, manage inboxes, and respond to messages.
-- **CRM Integration**: Agents can create, import, update, and manage deals within CRM systems.
+While we do not limit the number of tools you can add to agents, adding fewer
+tools often results in better performance. Carefully consider which tools will
+best serve your agent's purpose to optimize its efficiency.
 
-## Adding Tools
+</Tip>
 
-Tools are added through the Agent Builder interface. Here's how you can enable tools for your AI agents:
-
-1. Navigate to the agent you want to configure or create a new agent.
-2. Browse the available tools and choose the ones that meet your needs.
-3. Enable the selected tools for your agent.
-
-## Running Tools in Parallel
+<Note>
+**Running Tools in Parallel**
 
 Our platform supports running multiple tools in parallel, allowing agents to perform several tasks simultaneously. This capability ensures that tasks are completed faster and more efficiently.
 
+</Note>
+
+<Note>
+**Hidden Prompt**
+
+Each added tool also includes a hidden prompt sent with every request of the
+agent. This can affect the agent's response and consume more Compute Points
+per request. The hidden prompt includes the tool's name, description, JSON schema,
+and other components necessary for the agent to understand and use the tool effectively.
+
+</Note>
+
+<Note>
+  **Tool Use Failure and Retrying**
+
+When tool use fails, agents have the ability to retry using the tool. To
+encourage or prevent this behavior, you can instruct it to keep retrying or
+not in the system message.
+
+</Note>
+
+<Warning>
+**Max Iterations**
+
+As a safety precaution, there is a max iterations cap at 15. If an agent calls
+a single tool 15 times, either simultaneously or after retries, it will be
+automatically stopped.
+
+</Warning>
+
+## Tool Structure
+
+A tool consists of:
+
+- The name of the tool.
+- A description of what the tool does.
+- A JSON schema defining the inputs to the tool.
+- A function (and, optionally, an async variant of the function).
+
+When a tool is bound to a model, the name, description, and JSON schema are provided as context to the model. Given a list of tools and a set of instructions, a model can request to call one or more tools with specific inputs.
+
+## Available Tools
+
+Below is a table of all current tools supported by Invicta AI:
+
+| Tool Name                      | Description                                |
+| ------------------------------ | ------------------------------------------ |
+| Advanced Web Browsing (Tavily) | Enables advanced web browsing capabilities |
+| Airtable Create Records        | Creates records in Airtable                |
+| Airtable Delete Records        | Deletes records from Airtable              |
+| Airtable Find Bases            | Finds bases in Airtable                    |
+| Airtable Find Records          | Finds records in Airtable                  |
+| Airtable Find Tables           | Finds tables in Airtable                   |
+| Airtable Update Records        | Updates records in Airtable                |
+| Dalle Image Generator          | Generates images using Dalle               |
+| Flux Dev Image Generator       | Generates images using Flux Dev            |
+| Flux Pro Image Generator       | Generates images using Flux Pro            |
+| Flux Schnell Image Generator   | Generates images using Flux Schnell        |
+| Google Calendar Create Event   | Creates events in Google Calendar          |
+| Google Calendar Lookup         | Looks up events in Google Calendar         |
+| Hubspot Create Deal            | Creates deals in Hubspot                   |
+| Hubspot Create Note            | Creates notes in Hubspot                   |
+| Hubspot Delete Deal            | Deletes deals from Hubspot                 |
+| Hubspot Delete Note            | Deletes notes from Hubspot                 |
+| Hubspot Send Message           | Sends messages via Hubspot                 |
+| Hubspot Update Deal            | Updates deals in Hubspot                   |
+| Hubspot Update Note            | Updates notes in Hubspot                   |
+| Import HubSpot Deals           | Imports deals into HubSpot                 |
+| Outlook Calendar Create Event  | Creates events in Outlook Calendar         |
+| Outlook Calendar Lookup        | Looks up events in Outlook Calendar        |
+| Reply Email via Gmail          | Replies to emails via Gmail                |
+| Reply to Email via Outlook     | Replies to emails via Outlook              |
+| Send Email via Gmail           | Sends emails via Gmail                     |
+| Send Email via Outlook         | Sends emails via Outlook                   |
+| Slack Send Message             | Sends messages via Slack                   |
+| Web Browsing (DuckDuckGo)      | Browses the web using DuckDuckGo           |
+| Web Request                    | Makes web requests                         |
+| Website Scraper                | Scrapes information from websites          |
+| Wikipedia Search               | Searches Wikipedia                         |
+
+## Tool Categories
+
+Explore our comprehensive range of tools across various categories:
+
+<CardGroup cols={2}>
+  <Card title="Data and Web Tools" icon="globe" href="/tools/data-web">
+    Empower your agents with advanced web browsing, searching, and data scraping
+    capabilities.
+  </Card>
+  <Card title="Airtable Tools" icon="database" href="/tools/airtable">
+    Enable seamless interaction with Airtable for efficient data management and
+    manipulation.
+  </Card>
+  <Card
+    title="Image Generation Tools"
+    icon="image"
+    href="/tools/image-generation"
+  >
+    Equip your agents with the ability to generate and manipulate images using
+    various AI models.
+  </Card>
+  <Card title="Calendar Tools" icon="calendar" href="/tools/calendar">
+    Streamline scheduling and event management across different calendar
+    platforms.
+  </Card>
+  <Card title="HubSpot Tools" icon="briefcase" href="/tools/hubspot">
+    Facilitate comprehensive CRM management and customer engagement through
+    HubSpot integration.
+  </Card>
+  <Card title="Email Tools" icon="envelope-open-text" href="/tools/email">
+    Enhance communication capabilities with tools for sending and managing
+    emails across platforms.
+  </Card>
+  <Card title="Communication Tools" icon="comments" href="/tools/communication">
+    Improve team collaboration with integrated messaging tools like Slack.
+  </Card>
+</CardGroup>
+
+## Continuous Expansion
+
+We are constantly expanding our tool ecosystem to provide even more capabilities to your AI agents. Stay updated with our latest additions to leverage new functionalities as they become available. For detailed information on specific tools, their usage, and best practices, please refer to the individual tool documentation pages.
+
+<Tip>
+  We continuously strive to improve our platform based on user feedback. If you
+  have suggestions or requests for new tools, please fill out [this
+  form](https://docs.google.com/forms/d/e/1FAIpQLSeYpVFCfGKz1-fCUd_ErqZ9mJBURVlUqL9fsMaFuCJTeThKJA/viewform?usp=sf_link).
+  Our team reviews submissions daily and will respond within 72 hours.
+</Tip>
+
+## Adding Tools to Agents
+
+To add tools to your AI agents:
+
+<Steps>
+  <Step title="Navigate to the Agent Builder interface">
+    Access the main interface where you can configure your AI agents.
+  </Step>
+  <Step title="Select or create an agent">
+    Choose the existing agent you wish to configure or create a new one.
+  </Step>
+  <Step title="Browse available tools">
+    Explore the list of tools provided by Invicta AI.
+  </Step>
+  <Step title="Enable selected tools">
+    Activate the tools that align with your agent's intended functions.
+  </Step>
+</Steps>
+
 ## Conclusion
 
-Tools significantly enhance the functionality of our AI agents by providing them with the means to interact with external systems and automate complex workflows. By leveraging these tools, you can maximize the efficiency and productivity of your digital workforce.
-
-For further assistance on managing tools or any other features, please refer to our support resources or contact our help desk.
+Tools significantly enhance the functionality of our AI agents by providing them with means to interact with external systems and automate complex workflows. By leveraging these tools, you can maximize the efficiency and productivity of your digital workforce.
