@@ -59,10 +59,14 @@
           "group": "Components",
           "icon": "gear",
           "pages": [
-            "ai-agents/knowledge-base",
-            "ai-agents/memories",
+            {
+              "group": "Knowledge Base",
+              "icon": "database",
+              "pages": ["ai-agents/knowledge-base", "ai-agents/memories"]
+            },
             {
               "group": "System Message",
+              "icon": "user-gear",
               "pages": [
                 "ai-agents/system-message",
                 "ai-agents/prompt-best-practices"
@@ -72,11 +76,14 @@
             "ai-agents/ai-teammates",
             "ai-agents/triggers",
             "ai-agents/variables",
-            "ai-agents/llm-settings",
-            "ai-agents/batch-mode"
+            "ai-agents/llm-settings"
           ]
         }
       ]
+    },
+    {
+      "group": "Platform Capabilities",
+      "pages": ["platform-capabilities/batch-mode"]
     },
     {
       "group": "API Documentation",

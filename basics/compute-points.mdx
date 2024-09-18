@@ -1,46 +1,101 @@
----
-title: 'Compute Points'
----
+## What are Compute Points?
 
-### What are Compute Points?
-Compute points are a metric used to quantify the consumption of computing resources when tasks are performed by our AI agents. Each task that you execute, whether it is sending a chat message, running an automation, or any other interaction with AI models, will consume a certain number of compute points.
+Compute Points (CPs) are a metric used to quantify the consumption of computing resources when tasks are performed by our AI agents. Each agent request executed, including sending chat messages, triggering agents, or interacting with agents via widgets, consumes Compute Points.
 
-The number of compute points consumed is directly related to:
+<Info>
+  Compute Points provide a standardized way to measure resource usage across
+  different AI models and tools, allowing for fair and transparent billing.
+</Info>
 
-- The complexity of the task being performed.
-- The size and type of the language model (LLM) utilized.
+## How Compute Points are Calculated
 
-Compute points allow us to manage and allocate our computational resources efficiently, ensuring all users have access to high-quality services while also tracking usage for billing purposes.
+The calculation of Compute Points is based on several factors:
 
-### How Compute Points are Measured
-The measurement of compute points is tied to the "tokens" used by language learning models (LLMs). In the context of LLMs, a token typically represents a piece of text such as a word or part of a word.
+1. **Token Processing**: The number of tokens (input + output + reasoning) processed by a specific Language Model (LLM) per request.
 
-Here's how compute points correlate with token usage:
+   - Larger models like GPT-4o and Claude-3.5 use more CPs than simpler models like Llama 3 or Mistral Large.
+   - This includes your request, the agent's output, and any tokens processed by AI teammates invoked.
 
-- Lighter models, such as GPT-3.5 and Mistral Small, consume approximately 1-5 points per request.
-- More robust models like GPT-4 and Claude-3 may use between 10-30 points per interaction.
+2. **Agent Complexity**: The size of the system message and other complexity factors of the agent.
 
-Please note that these figures are estimates and actual consumption may vary depending on the specifics of each request.
+3. **Tool Usage**: Some specific tools consume a fixed number of Compute Points per request.
+   - For example, DALL-E 3 consumes 13 CP per request.
 
-## Compute Point Usage Examples
-To help you better understand how compute points work, here are some examples:
+<Note>
+  You can view the CP consumption per 1K tokens for each LLM in the LLM selector
+  in the ChatUI or on our [Available LLMs page](/available-llms).
+</Note>
 
-### Example 1: Simple Chat Message
-Sending a straightforward chat message that requires only a minimal response from a lighter model like GPT-3.5 might consume around 2 compute points.
-
-### Example 2: Complex Automation Task
-Running a complex automation task that involves generating lengthy content or processing extensive data through a more robust model like GPT-4 could consume upwards of 25 compute points.
+<Note>
+  You can view the amount of compute points consumed by tools by hovering over
+  the enabled tool in the ChatUI; it will appear in the popover card. (Coming
+  soon: Tools that consume CP will have a '?' icon to view the tooltip showing
+  the CP cost associated with it.)
+</Note>
 
 ## Monitoring Your Compute Point Usage
-Users can keep track of their consumption through our user dashboard. Here's how you can monitor your usage:
 
-1. Log in to your user dashboard.
-2. Navigate to the "Usage" section.
-3. Here, you'll find detailed reports on your compute point consumption.
+Users can keep track of their consumption in two ways:
 
-It's important to regularly monitor your usage to ensure that it aligns with your expected compute point budget and to avoid any surprises on your bill.
+1. **Progress Slider**:
+
+   - On desktop: Hover over the progress slider in the bottom left corner, just below your profile button.
+   - On mobile: Open the sidebar to view your CP usage.
+       <img src="/basics/slider.png" className="rounded-xl" alt="CP Usage" />
+
+
+   This shows how many compute points you have left and when they will reset.
+
+2. **Analytics Dashboard**:
+
+<Steps>
+  <Step title="Access User Profile">
+    Click on your user profile in the bottom left corner.
+  </Step>
+  <Step title="Navigate">Click on the "Analytics Page".</Step>
+  <Step title="View Reports">
+    Here, you'll find detailed reports on your compute point consumption and
+    other analytics.
+    <img src="/basics/cp-usage.png" className="rounded-xl" alt="CP Usage" />
+  </Step>
+</Steps>
+
+## Obtaining Compute Points
+
+Compute Points can be obtained through:
+
+1. **Monthly Allocation**: Based on your subscription tier.
+2. **Purchases**: Available in bundles of 1000 CPs (these do not expire).
+3. **Free Usage**: Free users receive 25 CPs daily.
+
+<Tip>
+  The more CPs you buy, the lower the per-point cost. Visit our [pricing
+  page](/pricing) to explore subscription tiers and bundles.
+</Tip>
+
+### Rollover Policy
+
+<Check>Purchased CPs (bundles of 1000) DO roll over and do not expire.</Check>
+<Warning>Monthly CPs and daily free CPs DO NOT roll over.</Warning>
+
+## Business or Enterprise Compute Points
+
+For Business or Enterprise customers, your company gets a pool of monthly compute points. All users added to the organisation will consume CPs from that pool. You can view them in the "Organisation" page.
+
+<Note>
+  If a user has both organisational and personal CP allocations, organisational
+  CPs will be consumed first. Personal CPs will be used only if organisational
+  CPs run out.
+</Note>
+
+## Optimizing CP Usage
+
+<Tip>
+  To conserve CPs, create new conversation threads frequently instead of
+  maintaining one long thread. Long conversations can disproportionately consume
+  CPs due to the large input token window required for each subsequent request.
+</Tip>
 
 ## Conclusion
-Compute points provide a transparent way for users to understand and manage their use of computing resources when interacting with AI agents. By monitoring your usage and being aware of how different tasks consume varying amounts of compute points, you can optimize your operations accordingly.
 
-For more information or if you have any questions regarding compute points, please refer to our FAQ section or contact our support team.
+Understanding and managing your Compute Point usage is crucial for optimizing your interaction with AI agents. By monitoring your consumption and being aware of how different tasks and models affect CP usage, you can make informed decisions about resource allocation and cost management.
