@@ -99,8 +99,8 @@
           "pages": [
             "help/how-secure-is-my-data",
             "help/can-I-try-Invicta-AI-for-free",
-            "help/can-i-use-my-own-LLM-API-key",
-            "help/does-invicta-ai-use-my-conversations-or-data-to-train-ai"
+            "help/does-invicta-ai-use-my-conversations-or-data-to-train-ai",
+            "help/do-compute-points-roll-over"
           ]
         }
       ]

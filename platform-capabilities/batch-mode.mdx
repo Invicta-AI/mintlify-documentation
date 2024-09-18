@@ -1,22 +1,81 @@
-## Overview
+---
+icon: table
+---
 
-Spreadsheet Mode in our AI Agents platform offers a powerful way to automate tasks across multiple rows of a spreadsheet. This feature allows you to run an agent on every row, using the data from each row to trigger the agent and perform the desired actions or generate responses.
+Batch Mode enables users to upload a CSV file and run an AI agent on each row of the spreadsheet. Each row is treated as a separate user query, allowing for efficient processing of multiple requests.
 
-## How It Works
+<Info>
+  Batch Mode processes each request independently, including tool use and
+  invoking AI teammates, just as it would in the ChatUI.
+</Info>
 
-When Spreadsheet Mode is initiated, each row in the spreadsheet is processed sequentially. The data from each row is used as input for the agent, which then performs its assigned task based on the information provided.
+## Use Cases
 
-### Use Cases
+- Mass data analysis
+- Bulk web scraping
+- Large-scale content generation
+- Automated data enrichment
 
-- **Mass Text Generation**: Generate personalized text outputs for each row of data.
-- **Task Automation**: Automate tasks such as importing deals into CRM systems, analyzing data, and sending mass emails.
+<Tip>
+  Batch Mode works exceptionally well with the web scrape tool for mass scraping
+  operations.
+</Tip>
 
-## Benefits
+## How to Use Batch Mode
 
-- **Efficiency**: Save time by automating repetitive tasks across large datasets.
-- **Consistency**: Ensure uniformity and accuracy by leveraging AI for mass operations.
-- **Scalability**: Easily scale operations without manual intervention.
+Follow these steps to utilize Batch Mode:
 
-## Conclusion
+<Steps>
+  <Step title="Access Batch Mode">
+    Navigate to the top right corner of the desired agent and click on the
+    "Batch Mode" button.
+        <img src="/platform-capabilities/batch-mode-icon.png" className="rounded-xl" alt="Batch Mode" />
 
-Spreadsheet Mode enhances your ability to manage large volumes of data by leveraging AI agents for automated processing. Whether it's generating text or automating tasks, this feature maximizes efficiency and productivity.
+  </Step>
+
+  <Step title="Upload CSV">Upload the CSV file you want to process.</Step>
+  <Step title="Configure Advanced Options (Optional)">
+    In advanced options, you can: 
+    - Select specific columns for the agent to
+    consider 
+    - Choose the starting and ending rows for processing
+  </Step>
+  <Step title="Enter Instructions">
+    Provide the instruction that will be applied to every row of the
+    spreadsheet.
+  </Step>
+  <Step title="Run the Batch">Execute the batch process.</Step>
+  <Step title="Download Results">
+    Download the results in either PDF or CSV format: - CSV: The agent's output
+    will appear as a new column called "Invicta Output" at the end of the
+    spreadsheet. - PDF: Each output will be on a separate page.
+  </Step>
+</Steps>
+
+## Important Considerations
+
+<Warning>
+  Be mindful of your Compute Points consumption. Batch Mode can quickly use a
+  significant amount of resources, especially for large datasets.
+</Warning>
+
+<Warning>
+  Exercise caution when using tools that may trigger account blocks or hit rate
+  limits. For example, mass email sending could be flagged as spam, and some
+  integrations may have request limitations.
+</Warning>
+
+## Best Practices
+
+1. Start with a small subset of your data to test the process before running a full batch.
+2. Monitor your Compute Points usage to avoid unexpected depletion.
+3. Exercise caution when using tools that interact with external systems or services. Be mindful of web scraping practices and ensure compliance with target website terms of service. When sending emails, consider spam regulations and recipient preferences. For API calls, respect rate limits and usage policies of third-party services.
+4. Regularly check the output quality to ensure the AI agent is performing as expected across all rows.
+
+<Info>
+  {" "}
+  When using tools that interact with external systems, always consider the potential
+  impact on those systems and your account status with various services.{" "}
+</Info>
+
+By leveraging Batch Mode, you can significantly increase the efficiency and scale of your AI agent operations, enabling you to process large volumes of data with ease.
