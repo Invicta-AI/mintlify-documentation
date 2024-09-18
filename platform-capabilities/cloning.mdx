@@ -1,0 +1,98 @@
+---
+icon: clone
+---
+
+Cloning allows users to duplicate AI agents and their configurations. This functionality enables instant deployment and customisation of AI agents.
+
+## What Gets Cloned
+
+When you clone an AI agent, the following elements are duplicated:
+
+- Knowledge base (files)
+- System message
+- LLM parameters
+- Other configurations
+
+<Info>
+  Cloning creates an exact copy of the original agent's setup, providing a quick
+  starting point for customization or deployment.
+</Info>
+
+## Cloning and Visibility
+
+The ability to clone an AI agent is governed by two key settings:
+
+1. **Open Source Setting**: Determines if others can clone your AI agent.
+2. **Visibility Setting**: Controls who can access your AI agent.
+
+<Note>
+  If your AI agent's visibility is set to private, it cannot be cloned by
+  others, regardless of the open source setting. Private agents are not visible
+  to other users.
+</Note>
+
+## How to Clone an Individual Agent
+
+There are two methods to clone an individual agent:
+
+<Steps>
+  <Step title="Via Agent Info Modal">
+    Open the agent's info modal and click the "Clone" button.
+  </Step>
+  <Step title="Via ChatUI">
+    Within the ChatUI, click the clone button in the top right corner.
+  </Step>
+</Steps>
+
+## Cloning Agent Teams
+
+If an agent has AI teammates and is open source, you have the option to clone either the individual agent or the entire Agent Team.
+
+<Steps>
+  <Step title="Open Info Modal">Open the agent's info modal.</Step>
+  <Step title="Choose Cloning Option">
+    Select whether to clone the individual agent or the entire Agent Team.
+    <img
+      src="/platform-capabilities/clone-team.png"
+      className="rounded-xl"
+      alt="Clone Agent Team"
+    />
+  </Step>
+</Steps>
+
+<Info>
+  When cloning an entire agent team, every agent within the team will be cloned.
+</Info>
+
+<Warning>
+  Only "downstream" agents (those to whom the current agent delegates, and their
+  subsequent delegates) will be cloned. "Upstream" agents (those that delegate
+  to the current agent) will not be cloned.
+</Warning>
+
+<Tip>
+  To share a complete team of agents for cloning, share the most upstream agent.
+</Tip>
+
+## Controlling Cloning Permissions
+
+The ability to clone an agent is determined by its "Open Source" or "Closed Source" status.
+
+<Steps>
+  <Step title="Access Agent Builder">
+    Open the Agent Builder when creating or editing an agent.
+  </Step>
+  <Step title="Locate Advanced Options">
+    Find the "Advanced Options" section.
+  </Step>
+  <Step title="Set Source Status">
+    Choose between "Open Source" or "Closed Source" and save the Agent.
+    <img
+      src="/platform-capabilities/clone-options.png"
+      className="rounded-xl"
+      alt="Clone Options"
+    />
+  </Step>
+</Steps>
+
+<Note>By default, agents are set to "Open Source".</Note>

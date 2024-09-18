@@ -83,7 +83,10 @@
     },
     {
       "group": "Platform Capabilities",
-      "pages": ["platform-capabilities/batch-mode"]
+      "pages": [
+        "platform-capabilities/batch-mode",
+        "platform-capabilities/cloning"
+      ]
     },
     {
       "group": "API Documentation",
