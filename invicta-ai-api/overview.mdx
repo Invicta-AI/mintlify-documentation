@@ -1,3 +1,7 @@
+---
+icon: code
+---
+
 Welcome to the Invicta AI API documentation. This API allows you to interact with our AI agents programmatically, enabling seamless integration of our advanced AI capabilities into your applications and workflows.
 
 ## Introduction
@@ -30,19 +34,19 @@ POST /triggers/webhooks/api-key/{AI_AGENT_ID}
 
 #### Headers
 
-| Header         | Type   | Required | Description                              |
-|----------------|--------|----------|------------------------------------------|
-| X-INVICTA-API  | string | Yes      | Your unique API key for authentication   |
-| Content-Type   | string | Yes      | Must be set to `application/json`        |
+| Header        | Type   | Required | Description                            |
+| ------------- | ------ | -------- | -------------------------------------- |
+| X-INVICTA-API | string | Yes      | Your unique API key for authentication |
+| Content-Type  | string | Yes      | Must be set to `application/json`      |
 
 #### Request Body Parameters
 
-| Parameter | Type   | Required | Description                                  |
-|-----------|--------|----------|----------------------------------------------|
-| userInput | string | Yes      | The prompt for the AI agent                  |
+| Parameter | Type   | Required | Description                                       |
+| --------- | ------ | -------- | ------------------------------------------------- |
+| userInput | string | Yes      | The prompt for the AI agent                       |
 | variables | array  | Yes      | Key-value pairs for customizing the system prompt |
-| threadId  | string | No       | Identifier for maintaining conversation context |
-| modelName | string | No       | Specific AI model to use for the response    |
+| threadId  | string | No       | Identifier for maintaining conversation context   |
+| modelName | string | No       | Specific AI model to use for the response         |
 
 ##### Variables Array Structure
 
@@ -97,13 +101,13 @@ The API returns a JSON object with the following structure:
 
 The API uses standard HTTP status codes to indicate the success or failure of a request.
 
-| Status Code | Meaning                |
-|-------------|------------------------|
-| 200         | OK                     |
-| 400         | Bad Request            |
-| 401         | Unauthorized           |
-| 404         | Not Found              |
-| 500         | Internal Server Error  |
+| Status Code | Meaning               |
+| ----------- | --------------------- |
+| 200         | OK                    |
+| 400         | Bad Request           |
+| 401         | Unauthorized          |
+| 404         | Not Found             |
+| 500         | Internal Server Error |
 
 ### Example Error Response
 
