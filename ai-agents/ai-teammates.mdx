@@ -3,28 +3,69 @@ title: "AI Teammates"
 icon: "users"
 ---
 
-## Introduction to AI Teammates
+Invicta AI allows you to assemble individual agents into complex teams, leveraging their unique capabilities to collaborate on intricate tasks. Here's how you can effectively create and manage AI Teammates.
 
-AI Teammates in our AI Agents platform enable collaborative interactions between agents, mimicking the dynamics of human teamwork. This feature allows agents to delegate tasks or questions to one another, ensuring that each task is handled by the most suitable agent based on their specialized roles and descriptions.
+## Overview
 
-## Selecting Teammates
+AI Teammates enable agents to invoke other agents in a manner similar to tool invocation. This facilitates the sharing of information and allows agents to command each other or use tools available to their teammates. Agents rely on the names and descriptions of their teammates to decide when to trigger them during interactions.
 
-When configuring an agent, you can select which teammates this agent will be able to delegate work to. This ensures efficient task management and optimal use of each agent's capabilities.
+<Info>
+  Instruct an agent to invoke its AI teammate by simply providing the teammate's
+  name, or allow the agent to deduce the need based on the teammate's
+  description.
+</Info>
 
-## Delegating Tasks
+## How It Works
 
-Agents use the descriptions of their teammates to decide when to trigger them during interactions. This allows for dynamic and context-sensitive delegation of tasks, enhancing workflow efficiency.
+1. When an agent's system message or your instructions trigger it, it sends a request with relevant information to another agent.
+2. The invoked agent uses its "Preferred LLM" to generate an appropriate response.
 
-### Conversation Patterns
+<Check>You can add AI Teammates to any given agent in the Agent Builder.</Check>
 
-You can create various conversation patterns with AI Teammates, including:
+<Note>You can only select agents that belong to you as AI teammates.</Note>
 
-- **Hierarchical**: Tasks are delegated from a primary agent down a chain of command.
-- **Sequential**: Tasks are passed from one agent to another in a specific sequence.
-- **Cyclical**: Tasks circulate among agents in a loop until completion.
+### Visual Representation
 
-## Conclusion
+If an agent is a teammate of other agents (upstream) or has other teammates (downstream), they will be displayed visually.
 
-AI Teammates facilitate advanced collaboration among agents, allowing them to manage complex workflows effectively. By leveraging this feature, you can ensure that each task is handled by the most appropriate agent, improving overall efficiency and performance.
+    <img
+      className="rounded-xl"
+      src="/ai-agents/ai-team.png"
+      alt="AI Team"
+    />
 
-For further assistance on managing AI Teammates or any other features, please refer to our support resources or contact our help desk.
+<Info>
+  For cloning agent teams, refer to [Cloning Agent
+  Teams](/platform-capabilities/cloning#cloning-agent-teams).
+</Info>
+
+## Conversation Patterns
+
+You can design various conversation patterns using AI Teammates:
+
+- **Hierarchical:** Tasks are delegated from a primary agent down a chain of command.
+- **Sequential:** Tasks are passed from one agent to another in a specific order.
+- **Cyclical:** Tasks circulate among agents in a loop until completion.
+
+<Warning>
+  There is a maximum iteration limit of 15. If one agent invokes an agent 15
+  times or 15 different agents once, it will be stopped automatically to prevent
+  loops.
+</Warning>
+
+## Benefits of AI Agent Teams
+
+Using AI Teammates offers several key advantages:
+
+- **Specialization:** Each agent can focus on specific tasks, enhancing efficiency and output quality.
+- **Cost-Effectiveness and Scalability:** Smaller, task-specific agents reduce errors and operational costs while scaling efficiently.
+- **Enhanced Accuracy through Collaboration:** Distributed tasks among specialized agents improve data processing and decision-making accuracy.
+- **Segmented Knowledge Management:** Isolated data handling enhances security and ensures data integrity.
+- **Modularity:** Simplifies updates and maintenance, facilitating agile development and reuse across projects.
+- **Collaborative Learning:** Agents continuously refine their problem-solving approaches through inter-agent feedback, leveraging collective intelligence for innovation.
+
+<Info>
+  For more detailed information on the benefits of AI Agent Teams, please read
+  the full article
+  [here](https://invictai.io/posts/why-are-ai-agent-teams-better-than-individual-agents).
+</Info>
