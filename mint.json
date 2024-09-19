@@ -91,6 +91,17 @@
       ]
     },
     {
+      "group": "Agent Tools Docs",
+      "pages": [
+        "tools/calendar-tools",
+        "tools/airtable-tools",
+        "tools/data-&-web-tools",
+        "tools/image-generation",
+        "tools/hubspot-tools",
+        "tools/email-&-communication-tools"
+      ]
+    },
+    {
       "group": "API Documentation",
       "pages": ["invicta-ai-api/overview"]
     },

@@ -1,0 +1,136 @@
+This category includes tools that enable AI agents to generate images based on text prompts. These tools utilize various AI models to create visual content.
+
+## Available Tools
+
+| Tool Name    | Description                                          | Compute Points |
+| ------------ | ---------------------------------------------------- | -------------- |
+| DALL·E 3     | Generate images using OpenAI's DALL·E 3 model        | 15             |
+| Flux Pro     | Generate images using Black Forest Labs Flux Pro     | 13             |
+| Flux Dev     | Generate images using Black Forest Labs Flux Dev     | 10             |
+| Flux Schnell | Generate images using Black Forest Labs Flux Schnell | 3              |
+
+## DALL·E 3
+
+### Description
+
+DALL·E 3 is an advanced image generation tool that creates high-quality, detailed images based on text descriptions. It offers various customization options for size and style, making it a versatile tool for AI agents in creative and design-oriented workflows.
+
+### System Tool ID and Tool Description for Agents
+
+- **Tool ID:** `dalle_api_wrapper`
+- **Description:** Generate image via OpenAI DALL·E 3.
+
+### Arguments
+
+| Name   | Required                        | Type   | Description                                                                                                        |
+| ------ | ------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------ |
+| prompt | Required                        | string | A text description of the desired image                                                                            |
+| size   | Optional (default: '1024x1024') | enum   | The size of the generated images. Options: '1024x1024', '1024x1792', '1792x1024'                                   |
+| style  | Optional (default: 'vivid')     | enum   | The style of the generated images. Options: 'vivid' (hyper-real and dramatic), 'natural' (less hyper-real looking) |
+
+### Compute Points
+
+**15 CP** per image generation
+
+<Tip>
+  DALL·E 3 is particularly useful for generating highly detailed and creative
+  images, making it ideal for tasks requiring unique visual content.
+</Tip>
+
+## Flux Schnell
+
+### Description
+
+Flux Schnell is a fast image generation tool that creates images based on text prompts. It offers customization for aspect ratio and allows for reproducible generation through seed values. This tool is excellent for quick image generation tasks within larger workflows.
+
+### System Tool ID and Tool Description for Agents
+
+- **Tool ID:** `bfl_flux_schnell`
+- **Description:** Generate image using Black Forest Labs Flux Schnell
+
+### Arguments
+
+| Name         | Required                  | Type   | Description                                                                                      |
+| ------------ | ------------------------- | ------ | ------------------------------------------------------------------------------------------------ |
+| prompt       | Required                  | string | Text prompt for image generation                                                                 |
+| aspect_ratio | Optional (default: '1:1') | enum   | Aspect ratio for the generated image. Options: '1:1', '16:9', '2:3', '3:2', '4:5', '5:4', '9:16' |
+| seed         | Optional                  | number | Random seed for reproducible generation. Only use if explicitly specified by the user            |
+
+### Compute Points
+
+**3 CP** per image generation
+
+<Tip>
+  Flux Schnell is the most compute-efficient option, making it ideal for
+  workflows requiring multiple image generations or rapid prototyping.
+</Tip>
+
+## Flux Dev
+
+### Description
+
+Flux Dev is an image generation tool that offers more control over the generation process, including the number of inference steps and guidance strength. This tool is suitable for AI agents that need fine-tuned control over the image generation process.
+
+### System Tool ID and Tool Description for Agents
+
+- **Tool ID:** `bfl_flux_dev`
+- **Description:** Generate image via Black Forest Labs Flux Dev
+
+### Arguments
+
+| Name                | Required                  | Type   | Description                                                                                      |
+| ------------------- | ------------------------- | ------ | ------------------------------------------------------------------------------------------------ |
+| prompt              | Required                  | string | Text prompt for image generation                                                                 |
+| aspect_ratio        | Optional (default: '1:1') | enum   | Aspect ratio for the generated image. Options: '1:1', '16:9', '2:3', '3:2', '4:5', '5:4', '9:16' |
+| num_inference_steps | Optional (default: 50)    | number | Number of denoising steps. Range: 1-50, recommended: 28-50                                       |
+| guidance            | Optional (default: 3.5)   | number | Guidance for generated image. Range: 0-10                                                        |
+| seed                | Optional                  | number | Random seed for reproducible generation. Only use if explicitly specified by the user            |
+
+### Compute Points
+
+**10 CP** per image generation
+
+<Tip>
+  Flux Dev is particularly useful for experimenting with images that might be
+  flagged by other models. It offers a good balance between control and compute
+  efficiency, making it suitable for workflows that require exploring more
+  diverse or potentially sensitive image content.{" "}
+</Tip>
+
+## Flux Pro
+
+### Description
+
+Flux Pro is an advanced image generation tool that offers fine-grained control over various aspects of the generation process, including guidance, interval, and safety tolerance. This tool is ideal for AI agents that require maximum control over the image generation process.
+
+### System Tool ID and Tool Description for Agents
+
+- **Tool ID:** `bfl_flux_pro`
+- **Description:** Generate image via Black Forest Labs Flux Pro
+
+### Arguments
+
+| Name             | Required                  | Type   | Description                                                                                      |
+| ---------------- | ------------------------- | ------ | ------------------------------------------------------------------------------------------------ |
+| prompt           | Required                  | string | Text prompt for image generation                                                                 |
+| aspect_ratio     | Optional (default: '1:1') | enum   | Aspect ratio for the generated image. Options: '1:1', '16:9', '2:3', '3:2', '4:5', '5:4', '9:16' |
+| steps            | Optional (default: 25)    | number | Number of diffusion steps. Range: 1-50                                                           |
+| guidance         | Optional (default: 3)     | number | Controls balance between prompt adherence and image quality. Range: 2-5                          |
+| interval         | Optional (default: 2)     | number | Increases variance in outputs. Range: 1-4                                                        |
+| safety_tolerance | Optional (default: 2)     | number | Safety tolerance, 1 is most strict, 5 is most permissive                                         |
+| seed             | Optional                  | number | Random seed for reproducible generation. Only use if explicitly specified by the user            |
+
+### Compute Points
+
+**13 CP** per image generation
+
+<Tip>
+  Flux Pro is ideal for workflows that require the highest level of control over
+  image generation, especially when specific artistic or stylistic requirements
+  are needed.
+</Tip>
+
+<Info>
+  All image generation tools return a JSON string containing information about
+  the generated image, including its URL on AWS.
+</Info>

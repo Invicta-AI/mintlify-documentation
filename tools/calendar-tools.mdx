@@ -1,0 +1,97 @@
+Calendar Tools are a set of utilities that enable AI Agents to interact with Google Calendar and Outlook Calendar. These tools allow agents to find events and create new events in these calendar systems.
+
+## Available Tools
+
+| Tool Name                     | Description                                      |
+| ----------------------------- | ------------------------------------------------ |
+| Google Calendar Find Events   | Retrieves a list of events from Google Calendar  |
+| Google Calendar Create Event  | Creates a new event in Google Calendar           |
+| Outlook Calendar Find Events  | Retrieves a list of events from Outlook Calendar |
+| Outlook Calendar Create Event | Creates a new event in Outlook Calendar          |
+
+## Google Calendar Find Events
+
+### Description
+
+This tool allows AI Agents to search for and retrieve a list of events from a user's Google Calendar within a specified time range.
+
+### System Tool ID and Tool Description for Agents
+
+- **Tool ID:** `google_calendar_find_events`
+- **Description:** Find list of events from Google Calendar.
+
+### Arguments
+
+| Name     | Required | Type   | Description                                                                                                                                                                                                                                         |
+| -------- | -------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| time_min | Optional | String | Lower bound (exclusive) for an event's end time to filter by. Must be an RFC3339 timestamp with mandatory time zone offset, e.g., "2011-06-03T10:00:00-07:00" or "2011-06-03T10:00:00Z". If timeMax is set, timeMin must be smaller than timeMax.   |
+| time_max | Optional | String | Upper bound (exclusive) for an event's start time to filter by. Must be an RFC3339 timestamp with mandatory time zone offset, e.g., "2011-06-03T10:00:00-07:00" or "2011-06-03T10:00:00Z". If timeMin is set, timeMax must be greater than timeMin. |
+
+<Note>
+  If neither time_min nor time_max is specified, the tool will return events
+  based on the default time range set by the Google Calendar API.
+</Note>
+
+## Google Calendar Create Event
+
+### Description
+
+This tool enables AI Agents to create new events in a user's Google Calendar with specified details such as time, location, attendees, and description.
+
+### System Tool ID and Tool Description for Agents
+
+- **Tool ID:** `google_calendar_create_event`
+- **Description:** Create event on Google Calendar.
+
+### Arguments
+
+| Name             | Required | Type             | Description                                                                                              |
+| ---------------- | -------- | ---------------- | -------------------------------------------------------------------------------------------------------- |
+| start            | Required | String           | The start time of the event, formatted as an RFC3339 timestamp.                                          |
+| end              | Required | String           | The end time of the event, formatted as an RFC3339 timestamp.                                            |
+| timezone         | Optional | String           | The time zone for the event. Default is "utc". Use IANA Time Zone Database names, e.g., "Europe/Zurich". |
+| location         | Optional | String           | The location of the event.                                                                               |
+| attendees_emails | Optional | Array of Strings | Email addresses of event attendees. Default is an empty array.                                           |
+| summary          | Optional | String           | A brief summary or title of the event.                                                                   |
+| description      | Optional | String           | A detailed description of the event.                                                                     |
+
+## Outlook Calendar Find Events
+
+### Description
+
+This tool allows AI Agents to search for and retrieve a list of events from a user's Outlook Calendar within a specified time range.
+
+### System Tool ID and Tool Description for Agents
+
+- **Tool ID:** `outlook_calendar_find_events`
+- **Description:** Find list of events from Outlook Calendar.
+
+### Arguments
+
+| Name       | Required | Type   | Description                                                                                                                 |
+| ---------- | -------- | ------ | --------------------------------------------------------------------------------------------------------------------------- |
+| start_time | Required | String | Event's start time to filter by. Must be an RFC3339 timestamp, e.g., "2011-06-03T10:00:00Z".                                |
+| end_time   | Required | String | Event's end time to filter by. Must be an RFC3339 timestamp, e.g., "2011-06-03T10:00:00Z". Must be greater than start_time. |
+
+## Outlook Calendar Create Event
+
+### Description
+
+This tool enables AI Agents to create new events in a user's Outlook Calendar with specified details such as time, location, attendees, and description.
+
+### System Tool ID and Tool Description for Agents
+
+- **Tool ID:** `outlook_calendar_create_event`
+- **Description:** Create event on Outlook Calendar.
+
+### Arguments
+
+| Name             | Required | Type             | Description                                                                                              |
+| ---------------- | -------- | ---------------- | -------------------------------------------------------------------------------------------------------- |
+| start            | Required | String           | The start time of the event, formatted as an RFC3339 timestamp.                                          |
+| end              | Required | String           | The end time of the event, formatted as an RFC3339 timestamp.                                            |
+| timezone         | Optional | String           | The time zone for the event. Default is "utc". Use IANA Time Zone Database names, e.g., "Europe/Zurich". |
+| location         | Optional | String           | The location of the event.                                                                               |
+| attendees_emails | Optional | Array of Strings | Email addresses of event attendees. Default is an empty array.                                           |
+| subject          | Optional | String           | The subject or title of the event.                                                                       |
+| body             | Optional | String           | The body or description of the event.                                                                    |

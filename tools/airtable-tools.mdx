@@ -1,0 +1,137 @@
+Airtable Tools provide AI Agents with the capability to interact with Airtable, allowing them to perform various operations such as finding bases, tables, and records, as well as creating, updating, and deleting records.
+
+## List of Airtable Tools
+
+| Tool Name               | Description                |
+| ----------------------- | -------------------------- |
+| Find Airtable Bases     | Find bases on Airtable     |
+| Find Airtable Tables    | Find tables on Airtable    |
+| Find Airtable Records   | Find records on Airtable   |
+| Create Airtable Records | Create records on Airtable |
+| Update Airtable Record  | Update record on Airtable  |
+| Delete Airtable Record  | Delete record on Airtable  |
+
+## Find Bases
+
+### Description
+
+This tool allows AI Agents to find bases on Airtable. It can be used to retrieve a list of available bases, which is useful for further operations that require base IDs.
+
+### System Tool ID and Tool Description for Agents
+
+- **Tool ID:** `airtable_find_bases`
+- **Description:** Find bases on Airtable
+
+### Arguments
+
+| Name   | Required | Type   | Description                                                            |
+| ------ | -------- | ------ | ---------------------------------------------------------------------- |
+| offset | Optional | string | Offset for getting the next page of results when iterating over pages. |
+
+## Find Tables
+
+### Description
+
+This tool enables AI Agents to find tables within a specific Airtable base. It's useful for discovering available tables before performing operations on them.
+
+### System Tool ID and Tool Description for Agents
+
+- **Tool ID:** `airtable_find_tables`
+- **Description:** Find tables on Airtable
+
+### Arguments
+
+| Name    | Required | Type   | Description                                                            |
+| ------- | -------- | ------ | ---------------------------------------------------------------------- |
+| base_id | Required | string | The ID of the base to find tables in.                                  |
+| offset  | Optional | string | Offset for getting the next page of results when iterating over pages. |
+
+## Find Records
+
+### Description
+
+This tool allows AI Agents to search for records within a specific table of an Airtable base. It provides flexibility in finding records based on certain criteria.
+
+### System Tool ID and Tool Description for Agents
+
+- **Tool ID:** `airtable_find_records`
+- **Description:** Find records on Airtable
+
+### Arguments
+
+| Name              | Required | Type   | Description                                                            |
+| ----------------- | -------- | ------ | ---------------------------------------------------------------------- |
+| base_id           | Required | string | The ID of the base containing the table.                               |
+| table_id          | Required | string | The ID of the table to search records in.                              |
+| filter_by_formula | Optional | string | Airtable web API param to search records.                              |
+| offset            | Optional | string | Offset for getting the next page of results when iterating over pages. |
+
+## Create Records
+
+### Description
+
+This tool enables AI Agents to create new records in a specified table of an Airtable base. It's useful for adding new data to Airtable.
+
+### System Tool ID and Tool Description for Agents
+
+- **Tool ID:** `airtable_create_records`
+- **Description:** Create records on Airtable.
+
+### Arguments
+
+| Name             | Required | Type             | Description                                                                          |
+| ---------------- | -------- | ---------------- | ------------------------------------------------------------------------------------ |
+| base_id          | Required | string           | The ID of the base containing the table.                                             |
+| table_id         | Required | string           | The ID of the table to create records in.                                            |
+| records          | Required | array of objects | An array of record objects to create. Each object should have a `fields` property.   |
+| records[].fields | Required | object           | A dynamic object where keys are strings (field names) and values can be of any type. |
+
+## Update Record
+
+### Description
+
+This tool allows AI Agents to update an existing record in a specified table of an Airtable base. It's useful for modifying data in Airtable.
+
+### System Tool ID and Tool Description for Agents
+
+- **Tool ID:** `airtable_update_record`
+- **Description:** Update record on Airtable.
+
+### Arguments
+
+| Name      | Required | Type   | Description                                                                          |
+| --------- | -------- | ------ | ------------------------------------------------------------------------------------ |
+| base_id   | Required | string | The ID of the base containing the table.                                             |
+| table_id  | Required | string | The ID of the table containing the record.                                           |
+| record_id | Required | string | The ID of the record to update.                                                      |
+| fields    | Required | object | A dynamic object where keys are strings (field names) and values can be of any type. |
+
+## Delete Record
+
+### Description
+
+This tool enables AI Agents to delete a specific record from a table in an Airtable base. It's useful for removing unwanted data from Airtable.
+
+### System Tool ID and Tool Description for Agents
+
+- **Tool ID:** `airtable_delete_record`
+- **Description:** Delete record on Airtable.
+
+### Arguments
+
+| Name      | Required | Type   | Description                                |
+| --------- | -------- | ------ | ------------------------------------------ |
+| base_id   | Required | string | The ID of the base containing the table.   |
+| table_id  | Required | string | The ID of the table containing the record. |
+| record_id | Required | string | The ID of the record to delete.            |
+
+<Note>
+  All these tools return their responses as JSON strings. Agents should parse
+  these strings to work with the returned data.
+</Note>
+
+<Warning>
+  Be cautious when using update and delete operations, as they permanently
+  modify the data in Airtable. Always ensure you have the correct record IDs
+  before performing these operations.
+</Warning>

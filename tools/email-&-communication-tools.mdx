@@ -1,0 +1,129 @@
+This section covers the tools available for email and communication within the Invicta AI platform. These tools enable AI agents to send messages via various platforms, including Slack, Microsoft Outlook, and Gmail.
+
+## Available Tools
+
+| Tool Name                | Description                             |
+| ------------------------ | --------------------------------------- |
+| Slack Send Message       | Send messages via Slack                 |
+| Outlook Send Message     | Send messages via Microsoft Outlook     |
+| Outlook Reply to Message | Reply to messages via Microsoft Outlook |
+| Gmail Send Message       | Send messages using Gmail               |
+| Gmail Reply Message      | Reply to messages using Gmail           |
+
+## Slack Send Message
+
+### Description
+
+This tool allows AI agents to send messages through Slack channels.
+
+### System Tool ID and Tool Description for Agents
+
+- **Tool ID:** `slack_send_message`
+- **Description:** Send message via Slack.
+
+### Arguments
+
+| Name       | Required | Type   | Description                                        |
+| ---------- | -------- | ------ | -------------------------------------------------- |
+| channel_id | Required | string | The ID of the Slack channel to send the message to |
+| text       | Required | string | The content of the message to be sent              |
+
+<Tip>
+  Slack integration works great as a notification center for your AI agent
+  teams, allowing easy monitoring and interaction with your workflows.
+</Tip>
+
+## Outlook Send Message
+
+### Description
+
+This tool enables AI agents to send emails using Microsoft Outlook.
+
+### System Tool ID and Tool Description for Agents
+
+- **Tool ID:** `outlook_send_message`
+- **Description:** Send message via Microsoft Outlook.
+
+### Arguments
+
+| Name       | Required               | Type             | Description                                             |
+| ---------- | ---------------------- | ---------------- | ------------------------------------------------------- |
+| to_emails  | Required               | array of strings | Array of email addresses who should receive the message |
+| subject    | Required               | string           | Title of the message                                    |
+| body       | Required               | string           | Content of the message                                  |
+| cc_emails  | Optional (default: []) | array of strings | Array of carbon copy email addresses                    |
+| bcc_emails | Optional (default: []) | array of strings | Array of blind carbon copy email addresses              |
+
+<Note>
+  The subject of the email will be prefixed with "Invicta AI: " automatically.
+</Note>
+
+## Outlook Reply to Message
+
+### Description
+
+This tool allows AI agents to reply to existing email threads using Microsoft Outlook.
+
+### System Tool ID and Tool Description for Agents
+
+- **Tool ID:** `outlook_reply_to_message`
+- **Description:** Reply to message via Microsoft Outlook.
+
+### Arguments
+
+| Name            | Required               | Type             | Description                                           |
+| --------------- | ---------------------- | ---------------- | ----------------------------------------------------- |
+| to_emails       | Required               | array of strings | Array of email addresses who should receive the reply |
+| body            | Required               | string           | Content of the reply message                          |
+| last_message_id | Required               | string           | Previous message ID, used to reply                    |
+| cc_emails       | Optional (default: []) | array of strings | Array of carbon copy email addresses                  |
+| bcc_emails      | Optional (default: []) | array of strings | Array of blind carbon copy email addresses            |
+
+## Gmail Send Message
+
+### Description
+
+This tool enables AI agents to send emails using Gmail.
+
+### System Tool ID and Tool Description for Agents
+
+- **Tool ID:** `gmail_send_message`
+- **Description:** Send message using Gmail.
+
+### Arguments
+
+| Name       | Required               | Type             | Description                                             |
+| ---------- | ---------------------- | ---------------- | ------------------------------------------------------- |
+| to_emails  | Required               | array of strings | Array of email addresses who should receive the message |
+| subject    | Required               | string           | Title of the message                                    |
+| body       | Required               | string           | Content of the message                                  |
+| cc_emails  | Optional (default: []) | array of strings | Array of carbon copy email addresses                    |
+| bcc_emails | Optional (default: []) | array of strings | Array of blind carbon copy email addresses              |
+
+## Gmail Reply Message
+
+### Description
+
+This tool allows AI agents to reply to existing email threads using Gmail.
+
+### System Tool ID and Tool Description for Agents
+
+- **Tool ID:** `gmail_reply_message`
+- **Description:** Reply message using Gmail.
+
+### Arguments
+
+| Name       | Required               | Type             | Description                                                     |
+| ---------- | ---------------------- | ---------------- | --------------------------------------------------------------- |
+| to_emails  | Required               | array of strings | Array of email addresses who should receive the reply           |
+| subject    | Required               | string           | Title of the message (must be the same as the original message) |
+| body       | Required               | string           | Content of the reply message                                    |
+| threadId   | Required               | string           | ID of conversation thread, used to reply to the message         |
+| message_id | Required               | string           | Message-ID value from headers used to reply to the message      |
+| cc_emails  | Optional (default: []) | array of strings | Array of carbon copy email addresses                            |
+| bcc_emails | Optional (default: []) | array of strings | Array of blind carbon copy email addresses                      |
+
+<Note>
+  Ensure that the subject matches the original message's subject when replying
+  to maintain thread consistency.
+</Note>

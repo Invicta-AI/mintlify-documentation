@@ -1,0 +1,122 @@
+Empower your agents with advanced web browsing, searching, and data scraping capabilities.
+
+## List of Data & Web Tools
+
+| Tool Name         | Description                                   |
+| ----------------- | --------------------------------------------- |
+| Scrape Web Text   | Extract visible text content from webpages    |
+| DuckDuckGo Search | Perform web searches using DuckDuckGo         |
+| Tavily Search     | Execute web searches using Tavily Search API  |
+| Wikipedia         | Query and retrieve information from Wikipedia |
+| Web Request       | Perform customizable HTTP requests            |
+
+## Scrape Web Text
+
+### Description
+
+This tool enables agents to extract visible text content from a given webpage URL. It's ideal for web scraping tasks where the goal is to retrieve readable information from a specific web page, allowing agents to gather data efficiently from online sources.
+
+### System Tool ID and Tool Description for Agents
+
+**Tool ID:** scrape_web_text
+**Description:** Extracts visible text content from a given webpage URL. Ideal for web scraping tasks where the goal is to retrieve readable information from a URL.
+
+### Arguments
+
+| Name | Required | Type   | Description                      |
+| ---- | -------- | ------ | -------------------------------- |
+| url  | Required | string | The URL of the webpage to scrape |
+
+<Note>
+  This tool focuses on extracting readable text content, which can be
+  particularly useful for gathering information from articles, blog posts, or
+  other text-heavy web pages.
+</Note>
+
+## DuckDuckGo Search
+
+### Description
+
+This tool allows agents to perform web searches using the DuckDuckGo search engine. It's useful for retrieving up-to-date information from the internet, providing agents with a broad view of available online content.
+
+### System Tool ID and Tool Description for Agents
+
+**Tool ID:** getDuckDuckGoSearch
+**Description:** Performs a web search using DuckDuckGo and returns the results.
+
+### Arguments
+
+| Name  | Required | Type   | Description                     |
+| ----- | -------- | ------ | ------------------------------- |
+| input | Required | string | The search query to be executed |
+
+<Note>This tool is configured to return a maximum of 5 search results.</Note>
+
+## Tavily Search
+
+### Description
+
+This tool enables agents to perform web searches using the Tavily Search API. It provides an alternative search method that can be useful for retrieving diverse search results, potentially offering different perspectives or sources compared to other search engines.
+
+### System Tool ID and Tool Description for Agents
+
+**Tool ID:** getTavilySearch
+**Description:** Executes a web search using the Tavily Search API and returns the results.
+
+### Arguments
+
+| Name  | Required | Type   | Description                     |
+| ----- | -------- | ------ | ------------------------------- |
+| input | Required | string | The search query to be executed |
+
+<Note>
+  This tool is configured to return a maximum of 5 search results and consumes Compute Points
+</Note>
+
+## Wikipedia
+
+### Description
+
+This tool allows agents to query Wikipedia and retrieve information from its vast knowledge base. It's particularly useful for gathering factual information on a wide range of topics, providing quick access to encyclopedic knowledge.
+
+### System Tool ID and Tool Description for Agents
+
+**Tool ID:** getWikipedia
+**Description:** Queries Wikipedia and returns relevant information based on the input.
+
+### Arguments
+
+| Name  | Required | Type   | Description                        |
+| ----- | -------- | ------ | ---------------------------------- |
+| query | Required | string | The Wikipedia query to be executed |
+
+<Note>
+  This tool is configured to return the top 3 results with a maximum content
+  length of 4000 characters per result.
+</Note>
+
+## Web Request
+
+### Description
+
+This tool allows agents to perform customizable HTTP requests to specified URLs. It's ideal for interacting with APIs or retrieving raw webpage data, providing flexibility in how agents can interact with web resources and services.
+
+### System Tool ID and Tool Description for Agents
+
+**Tool ID:** web_request
+**Description:** Performs a customizable HTTP request to a specified URL. Ideal for interacting with APIs or retrieving raw webpage data.
+
+### Arguments
+
+| Name           | Required | Type   | Description                                           |
+| -------------- | -------- | ------ | ----------------------------------------------------- |
+| url            | Required | string | The URL to send the request to                        |
+| request_method | Required | string | The HTTP method to use (e.g., GET, POST, PUT, DELETE) |
+| request_body   | Optional | object | The body of the request (default: {})                 |
+
+<Warning>
+  Ensure that the use of this tool complies with the terms of service of the
+  target websites and APIs.
+</Warning>
+
+These Data & Web Tools provide agents with powerful capabilities to interact with web resources, search for information, and extract data from websites. By leveraging these tools, agents can access a wealth of online information and perform complex web-related tasks, enhancing their ability to assist in various scenarios requiring up-to-date information or specific web interactions.
