@@ -1,0 +1,77 @@
+---
+sidebarTitle: "Basic"
+icon: "clock"
+---
+
+Basic triggers initiate AI agent actions based on time or events, enabling automated workflows in your AI agent teams.
+
+## Available Basic Triggers
+
+| Trigger Name | Description                                                                     |
+| ------------ | ------------------------------------------------------------------------------- |
+| Scheduler    | Executes AI agent tasks at specified times or intervals, similar to a cron job. |
+| Webhook      | Allows external systems to initiate AI agent tasks via HTTP POST requests.      |
+
+## Scheduler Trigger
+
+The Scheduler trigger allows you to run AI agent tasks at specified times or intervals.
+
+### Trigger Description
+
+The Scheduler trigger executes AI agent tasks based on a defined schedule, similar to a cron job.
+
+### Trigger Conditions
+
+The trigger activates according to the specified schedule, which can be set using cron-like syntax.
+
+### Event Data
+
+<Info>The Scheduler trigger uses cron-like syntax for scheduling.</Info>
+
+| Field      | Type   | Description                                                                         |
+| ---------- | ------ | ----------------------------------------------------------------------------------- |
+| minute     | String | Minute(s) when the job should run (0-59)                                            |
+| hour       | String | Hour(s) when the job should run (0-23)                                              |
+| dayOfMonth | String | Day(s) of the month when the job should run (1-31)                                  |
+| month      | String | Month(s) when the job should run (1-12 or names)                                    |
+| dayOfWeek  | String | Day(s) of the week when the job should run (0-7 or names, where 0 and 7 are Sunday) |
+| timezone   | String | Timezone for the schedule                                                           |
+| prompt     | String | The input prompt for the AI agent when triggered                                    |
+
+<Tip>
+  Use `*` for "any" value, or specify multiple values separated by commas.
+  Ranges can be defined with hyphens.
+</Tip>
+
+## Webhook Trigger
+
+The Webhook trigger allows external systems to initiate AI agent tasks via HTTP requests.
+
+### Trigger Description
+
+The Webhook trigger enables event-driven execution of AI agent tasks, activated by incoming HTTP POST requests.
+
+### Trigger Conditions
+
+The trigger activates when a valid HTTP POST request is received at the webhook endpoint associated with the AI agent.
+
+### Event Data
+
+| Field     | Type   | Description                                     |
+| --------- | ------ | ----------------------------------------------- |
+| userInput | String | The input prompt for the AI agent               |
+| variables | Array  | Additional variables to be used in the prompt   |
+| modelName | String | Specific language model to use for this request |
+| threadId  | String | Existing thread ID to continue a conversation   |
+
+<Note>
+  If no threadId is provided, a new conversation thread will be created for each
+  webhook call.
+</Note>
+
+<Warning>
+  Ensure that your webhook endpoint is secured and that you validate incoming
+  requests to prevent unauthorized access.
+</Warning>
+
+For more details about the Webhook API, please refer to our [API Overview](/invicta-ai-api/overview) page.

@@ -2,17 +2,86 @@
 icon: "bell"
 ---
 
-## Introduction to Triggers
+Triggers in Invicta AI enable agents to process requests automatically based on predefined conditions, without requiring manual user input. This feature component allows AI Agents to function autonomously, respond to events, and execute tasks proactively without constant human oversight.
 
-Triggers in our AI Agents platform enable agents to initiate actions automatically based on specific events or conditions. This automation improves efficiency by allowing agents to respond without manual input.
+## How Triggers Work
 
-### Supported Triggers
+When a trigger condition is met, it sends a message to the associated agent. The agent then processes this message similarly to how it handles user inputs in the ChatUI, capable of generating responses, using tools, or invoking AI teammates as needed.
 
-1. **Scheduler Trigger**: Automatically initiates actions at specified times or intervals.
-2. **Webhook Trigger**: Responds to events from external systems via webhooks.
-3. **Email Triggers**: Activates based on incoming emails.
-4. **CRM Triggers (Inbox messages)**: Initiates actions when new messages are received in the CRM inbox.
+<Note>
+  Most triggers send the agent a message specified in the trigger's content
+  (e.g., email or message content). However, some triggers like "Scheduler" send
+  a predefined instruction to the agent.
+</Note>
 
-## Conclusion
+## Available Triggers
 
-Triggers streamline workflows and improve operational responsiveness. By automating responses based on specific events, AI agents handle tasks more efficiently with minimal manual intervention.
+Invicta AI offers a range of triggers to automate various workflows:
+
+| Trigger Name              | Description                                                                 |
+| ------------------------- | --------------------------------------------------------------------------- |
+| Scheduler                 | Executes tasks at specified times or intervals                              |
+| Webhook                   | Responds to HTTP POST requests, enabling integration with external services |
+| Gmail Mail Received       | Activates when a new email is received in a Gmail account                   |
+| Outlook Mail Received     | Activates when a new email is received in an Outlook account                |
+| HubSpot Incoming Messages | Responds to new messages or events in HubSpot CRM                           |
+
+<CardGroup cols={2}>
+  <Card title="Basic Triggers" icon="clock" href="/triggers/basic-triggers">
+    Includes Scheduler and Webhook triggers for time-based and event-driven
+    automation.
+  </Card>
+  <Card title="Email Triggers" icon="envelope" href="/triggers/email-triggers">
+    Triggers for Gmail and Outlook to automate email-based workflows.
+  </Card>
+  <Card
+    title="HubSpot Triggers"
+    icon="hubspot"
+    href="/triggers/hubspot-triggers"
+  >
+    Automate actions based on HubSpot CRM events and incoming messages.
+  </Card>
+</CardGroup>
+
+## Monitoring Trigger-Initiated Threads
+
+Threads initiated by triggers appear in the sidebar's thread list.
+
+<Info>
+  Unread threads are indicated by a white dot next to the thread title. Opening
+  the thread marks it as read and removes the dot.
+</Info>
+
+    <img
+      className="rounded-xl"
+      src="/ai-agents/unread-thread.png"
+
+alt="Trigger-Initiated Threads in Sidebar"
+/>
+
+## Suggesting New Triggers
+
+To suggest new triggers for implementation:
+
+1. Visit our [Trigger Suggestion Form](https://docs.google.com/forms/d/e/1FAIpQLSd7sP_r2cd885t49bRAsoAeP2L9RN2_XEIO9aLyLWDHDD7RSQ/viewform?usp=sf_link).
+2. Fill out the required information.
+3. Submit your suggestion.
+
+<Tip>
+  Our team reviews submissions daily and aims to respond within 72 hours.
+</Tip>
+
+## Sharing Agents with Triggers
+
+When sharing an agent that has a trigger function:
+
+- Other users cannot directly "Chat" with the agent.
+- They can only "Clone" the agent to use it.
+
+<Warning>
+  An AI agent with a trigger function that is closed source (not clonable by
+  others) can only be private. To share such an agent, either make it open
+  source (clonable) or remove the trigger function.
+</Warning>
+
+By leveraging triggers, you can create more responsive and autonomous AI agents, capable of handling complex workflows without constant manual intervention. This autonomy allows your AI workforce to operate continuously, responding to events and executing tasks around the clock, significantly enhancing operational efficiency and responsiveness in your organization.

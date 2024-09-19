@@ -1,0 +1,59 @@
+---
+sidebarTitle: "Email"
+icon: "envelope-open-text"
+---
+
+Email triggers in Invicta AI allow you to automate workflows based on incoming emails from Gmail and Outlook. These triggers can initiate actions or processes when new emails are received, enabling efficient email-based automation.
+
+## Available Email Triggers
+
+| Trigger Name      | Description                                       |
+| ----------------- | ------------------------------------------------- |
+| Gmail New Email   | Activates when a new email is received in Gmail   |
+| Outlook New Email | Activates when a new email is received in Outlook |
+
+## Gmail New Email Trigger
+
+### Trigger Description
+
+The Gmail New Email trigger activates when a new email is received in the user's Gmail inbox, excluding sent and spam emails.
+
+### Trigger Conditions
+
+- The email is not in the 'SENT' or 'SPAM' folders
+- The user associated with the email is valid and has a userId and username
+
+### Event Data
+
+| Field   | Type                     | Description                                |
+| ------- | ------------------------ | ------------------------------------------ |
+| message | GMailMessage             | The received email message object          |
+| user    | IntegrationAppUserFields | The user associated with the Gmail account |
+
+<Note>
+  The trigger removes the `payload` and `html_body` fields from the message
+  object before processing.
+</Note>
+
+## Outlook New Email Trigger
+
+### Trigger Description
+
+The Outlook New Email trigger activates when a new email is received in the user's Outlook inbox, excluding emails sent by the user themselves.
+
+### Trigger Conditions
+
+- The email is not sent by the user (determined by comparing the sender's email with the user's email)
+- The user associated with the email is valid and has a userId and username
+
+### Event Data
+
+| Field   | Type                     | Description                                  |
+| ------- | ------------------------ | -------------------------------------------- |
+| message | OutlookMessage           | The received email message object            |
+| user    | IntegrationAppUserFields | The user associated with the Outlook account |
+
+<Note>
+  The trigger removes the `@odata.context` and `@odata.etag` fields from the
+  message object before processing.
+</Note>

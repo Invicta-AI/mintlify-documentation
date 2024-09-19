@@ -1,0 +1,63 @@
+---
+sidebarTitle: "HubSpot"
+icon: "hubspot"
+---
+
+Invicta AI integrates with HubSpot, allowing your AI agents to respond to incoming messages and new conversation threads in HubSpot. This integration enables automated responses and workflow initiation based on HubSpot activities.
+
+## Available Triggers
+
+| Trigger ID               | Description                                                    |
+| ------------------------ | -------------------------------------------------------------- |
+| Hubspot Incoming Message | Activates when a new incoming message is received in HubSpot   |
+| Hubspot New Thread       | Activates when a new conversation thread is created in HubSpot |
+
+## Hubspot Incoming Message Trigger
+
+### Trigger Description
+
+The incoming message trigger activates when a new message is received in HubSpot, allowing your AI agents to process and respond to customer inquiries automatically.
+
+### Trigger Conditions
+
+- The message direction must be 'INCOMING'
+- The user must have at least one AI agent with the 'hubspot-incoming-message' trigger enabled
+
+### Event Data
+
+| Field                 | Type   | Description                                          |
+| --------------------- | ------ | ---------------------------------------------------- |
+| conversationsThreadId | String | The ID of the HubSpot conversation thread            |
+| channelId             | String | The ID of the channel where the message was received |
+| channelAccountId      | String | The ID of the account associated with the channel    |
+| text                  | String | The content of the incoming message                  |
+| createdAt             | String | The timestamp when the message was created           |
+
+<Note>
+  The event data is passed to the AI agent as a single string in the following
+  format: ``` threadId:[conversationsThreadId] channelId: [channelId]
+  channelAccountId: [channelAccountId] [text] ```
+</Note>
+
+## Hubspot New Thread Trigger
+
+### Trigger Description
+
+The new thread trigger activates when a new conversation thread is created in HubSpot, allowing your AI agents to initiate workflows or responses for new conversations.
+
+### Trigger Conditions
+
+- The first message in the thread must have a direction of 'INCOMING'
+- The user must have at least one AI agent with the 'hubspot-new-thread' trigger enabled
+
+### Event Data
+
+| Field    | Type   | Description                                                            |
+| -------- | ------ | ---------------------------------------------------------------------- |
+| threadId | String | The ID of the newly created HubSpot conversation thread                |
+| messages | Array  | An array of messages in the thread, with at least one incoming message |
+
+<Info>
+  The new thread trigger internally uses the incoming message trigger to process
+  the first message in the thread.
+</Info>

@@ -91,7 +91,7 @@
       ]
     },
     {
-      "group": "Agent Tool Docs",
+      "group": "Tool Docs",
       "pages": [
         "tools/data-&-web-tools",
         "tools/email-&-communication-tools",
@@ -99,6 +99,14 @@
         "tools/image-generation",
         "tools/airtable-tools",
         "tools/hubspot-tools"
+      ]
+    },
+    {
+      "group": "Trigger Docs",
+      "pages": [
+        "triggers/basic-triggers",
+        "triggers/email-triggers",
+        "triggers/hubspot-triggers"
       ]
     },
     {
