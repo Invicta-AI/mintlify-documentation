@@ -85,7 +85,8 @@
       "group": "Platform Capabilities",
       "pages": [
         "platform-capabilities/batch-mode",
-        "platform-capabilities/cloning"
+        "platform-capabilities/cloning",
+        "platform-capabilities/widget-and-embeds"
       ]
     },
     {
