@@ -1,37 +1,71 @@
 ---
-title: "Overview"
+title: "System Message"
+sidebarTitle: "Overview"
 ---
 
-The system message is the hidden instruction telling the AI Agents how to behave.
+The system message is a crucial component of an AI Agent, serving as the hidden instruction set that defines the agent's behavior.
 
-It allows you to modify the personality traits of the AI Agent, giving you the ability to provide specific instructions about how it should interact throughout the conversation. This could be making your agent more formal or informal, technical or user-friendly, serious or humorous, based on the needs of your business or individual use case. 
+<Note>
+  The system message is arguably the most important part of an AI Agent, as it
+  forms the foundation of the agent's functionality and decision-making process.
+</Note>
 
-## Using Uploaded Documents 
-When documents are uploaded into the knowledge base and selected for the AI Agent to use, the retrieved context will automatically appear at the end of the system message in the following format.
+The system message:
 
+- Defines the agent's role and behavior
+- Specifies when and how to use tools
+- Instructs on invoking AI Teammates
+- Is included in every request sent to the agent
+
+## Key Features
+
+### Behavior Definition
+
+The system message sets the tone, personality, and operational boundaries for the AI Agent. It's where you define how the agent should interact, what tasks it should perform, and any specific guidelines it should follow.
+
+### Tool and Teammate Integration
+
+When tools or AI Teammates are added to an agent, their IDs and descriptions are automatically inserted into the system message. This enables the agent to understand and utilize these resources effectively.
+
+<Note>
+  For more details on tools and AI Teammates, refer to their respective
+  documentation pages.
+</Note>
+
+### Context Integration
+
+The system message automatically incorporates relevant context from the knowledge base when documents are uploaded and selected for the AI Agent to use.
+
+<Info>
+  Retrieved context appears at the end of the system message in the following format:
+
+```
 [System Message]
-
-Used Context and Memories: [Context Chunks].
-
+Used Context and Memories: [Context Chunks]
 [Chat History]
-
 [Your current request]
+```
 
-## Examples of popular system messages
+</Info>
 
-**ChatGPT**
+## Customization
 
-Assistant is a large language model trained by OpenAl. Knowledge cutoff: 2021-09. Current date: current_date
-<br/>
+You can modify the agent's system message in the builder interface. This allows for fine-tuning of the agent's behavior and capabilities to suit specific use cases or requirements.
 
-**PerplexityAI (source)**
+<Warning>
+  Changes to the system message can significantly impact the agent's performance
+  and behavior. Always test thoroughly after making modifications.
+</Warning>
 
-Generate a comprehensive and informative answer (but no more than 80 words) for a given question solely based on the provided web Search Results (URL and Summary). You must only use information from the provided search results. Use an unbiased and journalistic tone. Use this current date and time: Wednesday, December 07,202222:50:56 UTC. Combine search results together into a coherent answer. Do not repeat text. Cite search results using number notation. Only cite the most relevant results that answer the question accurately. If different results refer to different entities with the same name, write separate answers for each entity.
+## Best Practices
 
-<br/>
+When crafting or modifying a system message:
 
-For more system messages, [click here](https://matt-rickard.com/a-list-of-leaked-system-prompts)
+1. Be clear and specific about the agent's role and limitations
+2. Provide guidelines for tool usage and teammate interactions
+3. Include any necessary ethical constraints or operational boundaries
 
-
-
-
+<Tip>
+  Consider creating templates for common agent roles to streamline the process
+  of setting up new agents.
+</Tip>
