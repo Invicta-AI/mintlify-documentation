@@ -22,7 +22,7 @@
     }
   ],
   "topbarCtaButton": {
-    "name": "Dashboard",
+    "name": "Platform",
     "url": "https://app.invictai.io/"
   },
   "anchors": [
@@ -40,6 +40,15 @@
       "name": "Community",
       "icon": "discord",
       "url": "https://discord.com/invite/sDSeRXNBSd"
+    }
+  ],
+  "primaryTab": {
+    "name": "Documentation"
+  },
+  "tabs": [
+    {
+      "name": "Changelog",
+      "url": "changelog"
     }
   ],
   "navigation": [
@@ -128,6 +137,10 @@
           ]
         }
       ]
+    },
+    {
+      "group": "Changelog",
+      "pages": ["changelog/overview"]
     }
   ],
   "footerSocials": {
