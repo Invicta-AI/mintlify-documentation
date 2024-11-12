@@ -49,6 +49,10 @@
     {
       "name": "Changelog",
       "url": "changelog"
+    },
+    {
+      "name": "Integrations",
+      "url": "integrations"
     }
   ],
   "navigation": [
@@ -147,6 +151,10 @@
     {
       "group": "Changelog",
       "pages": ["changelog/overview"]
+    },
+    {
+      "group": "Integrations",
+      "pages": ["integrations/overview"]
     }
   ],
   "footerSocials": {
