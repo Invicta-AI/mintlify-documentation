@@ -1,0 +1,37 @@
+---
+sidebarTitle: "Intercom"
+icon: "intercom"
+---
+
+Intercom triggers allow AI agents to respond automatically to events within the Intercom platform.
+
+<Note>
+  Integration required. [Learn how to set up.](/how-to/integration-setup)
+</Note>
+
+## List of Available Triggers
+
+| Trigger Name         | Description                                                    |
+| -------------------- | -------------------------------------------------------------- |
+| Intercom New Message | Activates AI agents when a new message is received in Intercom |
+
+### Intercom New Message
+
+- **Description:**  
+  Activates AI agents when a new message arrives in Intercom, enabling automated handling of customer messages.
+
+- **Trigger Conditions:**
+
+  - Fires on new user-initiated messages
+  - Requires valid user data (userId and username)
+
+- **Event Data:**
+
+| Name         | Required | Type   | Description                          |
+| ------------ | -------- | ------ | ------------------------------------ |
+| conversation | Yes      | Object | Details about the conversation event |
+| user         | Yes      | Object | User details (userId and username)   |
+
+<Card title="Explore Intercom Tools" icon="wrench" href="/tools/intercom-tools">
+  Discover tools for AI agents to interact with Intercom
+</Card>

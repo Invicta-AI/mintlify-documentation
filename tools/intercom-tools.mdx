@@ -1,0 +1,40 @@
+---
+sidebarTitle: "Intercom"
+icon: "intercom"
+---
+
+Intercom tools enable AI agents to interact with the Intercom platform.
+
+<Note>
+  Integration required. [Learn how to set up.](/how-to/integration-setup)
+</Note>
+
+## List of Available Tools
+
+| Tool Name             | Description                                              |
+| --------------------- | -------------------------------------------------------- |
+| Intercom Send Message | Allows AI agents to send messages using the Intercom API |
+
+### Intercom Send Message
+
+- **Description:**  
+  Enables AI agents to dispatch messages through Intercom, facilitating automated customer support interactions.
+
+- **System Tool ID:** intercom_send_message
+- **System Description:** Send message using Intercom.
+
+- **Arguments:**
+
+| Name            | Required | Type   | Description                  |
+| --------------- | -------- | ------ | ---------------------------- |
+| admin_id        | Yes      | String | Intercom User Id for replier |
+| conversation_id | Yes      | String | Conversation ID              |
+| body            | Yes      | String | Content of the message       |
+
+<Card
+  title="Explore Intercom Triggers"
+  icon="bell"
+  href="/triggers/intercom-triggers"
+>
+  Learn about events that can trigger AI agents in Intercom
+</Card>
