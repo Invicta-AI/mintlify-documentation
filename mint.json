@@ -107,7 +107,8 @@
         "tools/calendar-tools",
         "tools/image-generation",
         "tools/airtable-tools",
-        "tools/hubspot-tools"
+        "tools/hubspot-tools",
+        "tools/intercom-tools"
       ]
     },
     {
@@ -115,8 +116,13 @@
       "pages": [
         "triggers/basic-triggers",
         "triggers/email-triggers",
-        "triggers/hubspot-triggers"
+        "triggers/hubspot-triggers",
+        "triggers/intercom-triggers"
       ]
+    },
+    {
+      "group": "How to Guides",
+      "pages": ["how-to/integration-setup"]
     },
     {
       "group": "API Documentation",
