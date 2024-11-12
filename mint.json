@@ -154,7 +154,27 @@
     },
     {
       "group": "Integrations",
-      "pages": ["integrations/overview"]
+      "pages": [
+        "integrations/overview",
+        "integrations/airtable",
+        "integrations/google-calendar",
+        "integrations/gmail",
+        "integrations/google-drive",
+        "integrations/hubspot",
+        "integrations/intercom",
+        "integrations/notion",
+        "integrations/outlook",
+        "integrations/outlook-calendar",
+        "integrations/slack",
+        "integrations/tavily",
+        "integrations/duckduckgo",
+        "integrations/openai",
+        "integrations/anthropic",
+        "integrations/llama",
+        "integrations/mistral",
+        "integrations/flux",
+        "integrations/wikipedia"
+      ]
     }
   ],
   "footerSocials": {
