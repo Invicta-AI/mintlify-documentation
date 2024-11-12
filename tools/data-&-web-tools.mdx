@@ -7,13 +7,16 @@ Empower your agents with advanced web browsing, searching, and data scraping cap
 
 ## List of Data & Web Tools
 
-| Tool Name         | Description                                   |
-| ----------------- | --------------------------------------------- |
-| Scrape Web Text   | Extract visible text content from webpages    |
-| DuckDuckGo Search | Perform web searches using DuckDuckGo         |
-| Tavily Search     | Execute web searches using Tavily Search API  |
-| Wikipedia         | Query and retrieve information from Wikipedia |
-| Web Request       | Perform customizable HTTP requests            |
+| Tool Name                      | Description                                           |
+| ------------------------------ | ----------------------------------------------------- |
+| Scrape Web Text                | Extract visible text content from webpages            |
+| DuckDuckGo Search              | Perform web searches using DuckDuckGo                 |
+| Tavily Search                  | Execute web searches using Tavily Search API          |
+| Wikipedia                      | Query and retrieve information from Wikipedia         |
+| Web Request                    | Perform customizable HTTP requests                    |
+| LinkedIn Scrape Profiles       | Scrape LinkedIn profiles by URLs                      |
+| Twitter Scrape by Search Terms | Scrape Twitter data based on search terms             |
+| Twitter Scrape by Handles      | Scrape Twitter data based on Twitter handles/profiles |
 
 ## Scrape Web Text
 
@@ -126,3 +129,64 @@ This tool allows agents to perform customizable HTTP requests to specified URLs.
 </Warning>
 
 These Data & Web Tools provide agents with powerful capabilities to interact with web resources, search for information, and extract data from websites. By leveraging these tools, agents can access a wealth of online information and perform complex web-related tasks, enhancing their ability to assist in various scenarios requiring up-to-date information or specific web interactions.
+
+## LinkedIn Scrape Profiles
+
+### Description
+
+This tool allows agents to scrape LinkedIn profiles and retrieve comprehensive information about leads. It's particularly useful for gathering detailed professional data from multiple LinkedIn profiles simultaneously.
+
+### System Tool ID and Tool Description for Agents
+
+**Tool ID:** linkedin_scrape_profiles_by_urls
+**Description:** Scrape LinkedIn profiles and get full information of the lead. If there are several URLs, run only once combining them into the array.
+
+### Arguments
+
+| Name        | Required | Type     | Description                     |
+| ----------- | -------- | -------- | ------------------------------- |
+| profileUrls | Required | string[] | LinkedIn profile URLs to scrape |
+
+## Twitter Scrape by Search Terms
+
+### Description
+
+This tool enables agents to search and extract data from Twitter based on specific search terms. It's valuable for gathering recent tweets, trending topics, or discussions related to particular keywords or phrases.
+
+### System Tool ID and Tool Description for Agents
+
+**Tool ID:** twitter_scrape_by_search_terms
+**Description:** Twitter Scraper searches and extracts data based on search terms. If there are several search terms, run only once combining them into the array.
+
+### Arguments
+
+| Name        | Required | Type     | Description                                                                                |
+| ----------- | -------- | -------- | ------------------------------------------------------------------------------------------ |
+| searchTerms | Required | string[] | Search terms to scrape                                                                     |
+| start       | Optional | string   | Tweets from this date. Use YYYY-MM-DD format. Default is an empty string.                  |
+| end         | Optional | string   | Tweets until this date. Use YYYY-MM-DD format. Default is an empty string.                 |
+| sort        | Optional | string   | Sort order of the tweets. Options: 'Latest' or 'Top'. Default is 'Top'.                    |
+| maxItems    | Optional | string   | Maximum number of items to return. Options: '5', '10', '25', '50', '100'. Default is '10'. |
+
+## Twitter Scrape by Handles
+
+### Description
+
+This tool allows agents to search and extract data from Twitter based on specific Twitter handles or profiles. It's useful for monitoring tweets from particular accounts, analyzing user activity, or gathering information about specific Twitter users.
+
+### System Tool ID and Tool Description for Agents
+
+**Tool ID:** twitter_scrape_by_handles
+**Description:** Twitter Scraper searches and extracts data based on Twitter handles/profiles. If there are several handles/profiles, run only once combining them into the array.
+
+### Arguments
+
+| Name           | Required | Type     | Description                                                                                |
+| -------------- | -------- | -------- | ------------------------------------------------------------------------------------------ |
+| twitterHandles | Required | string[] | Twitter handles to scrape                                                                  |
+| start          | Optional | string   | Tweets from this date. Use YYYY-MM-DD format. Default is an empty string.                  |
+| end            | Optional | string   | Tweets until this date. Use YYYY-MM-DD format. Default is an empty string.                 |
+| sort           | Optional | string   | Sort order of the tweets. Options: 'Latest' or 'Top'. Default is 'Top'.                    |
+| maxItems       | Optional | string   | Maximum number of items to return. Options: '5', '10', '25', '50', '100'. Default is '10'. |
+
+These Data & Web Tools provide agents with powerful capabilities to interact with web resources, search for information, and extract data from websites, including specialized tools for LinkedIn and Twitter. By leveraging these tools, agents can access a wealth of online information and perform complex web-related tasks, enhancing their ability to assist in various scenarios requiring up-to-date information or specific web interactions.
