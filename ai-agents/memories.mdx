@@ -1,21 +1,60 @@
-Memories in our AI Agents platform serve as an extension of the Knowledge Base. When you save a "Memory," it is stored in the Knowledge Base and can be retrieved by the agents just like other files and data. This capability allows agents to remember and utilize past interactions for more contextually aware responses.
+---
+title: "Long-Term Memory"
+description: "Enable AI agents to remember and learn from your conversations"
+---
 
-## How to Save Memories
+AI agents use memories to provide more contextually relevant responses by learning from your past interactions. This intelligent system automatically identifies and retains important information from your conversations.
 
-There are three primary ways to save memories:
+## Features
 
-1. **Remember a Message**: Hover over a specific message and click "Remember this." This action saves the message pair (both the prompt and AI response) to the Knowledge Base, making it immediately available to the agent you're interacting with.
-   
-2. **Remember a Thread**: Click on the menu button of any conversation thread and select "Remember thread." This will save all messages from that thread to the Knowledge Base, enabling them for the agent's use.
+- **Automatic Learning**: Intelligently identifies and saves notable information from conversations
+- **Context Enhancement**: Adds relevant memories to conversations like system messages
+- **Smart Management**: Updates and consolidates related memories automatically
+- **Privacy Focused**: Maintains user-specific memory bases for enhanced security
 
-3. **Auto-Memory Creation** *(Coming soon)*: Enable the "Auto-memory creation" tool. This allows the agent to automatically detect and save information deemed important during interactions, adding it to the Knowledge Base without manual intervention.
+## Memory Controls
 
-## Sharing Memories Across Agents
+### Checking Memory Status
 
-Memories are versatile and not limited to individual agents. You can enable memories saved by one agent for use by another, facilitating shared knowledge and improving collaborative efficiency among multiple agents.
+Look for the brain icon in the agent's UI:
 
-## Conclusion
+- 🟢 Green indicator: Memory is enabled
+- 🔴 Red indicator: Memory is disabled
 
-Memories enhance the functionality of AI agents by allowing them to recall previous interactions and context, ensuring more informed and relevant responses. By integrating memories seamlessly into the Knowledge Base, your AI agents become smarter and more effective with each interaction.
+  <Frame>
+    <img src="/ai-agents/memory1.png" alt="Memory Indicator" />
+  </Frame>
 
-For further assistance on managing memories or any other features, please refer to our support resources or contact our help desk.
+### Managing Memories
+
+You can control the memory system in two ways:
+
+1. **Tool Management**: Add or remove memory as an agent tool
+2. **Quick Toggle**: Use the memory management dialog via the brain icon
+
+{" "}
+
+<Frame>
+  <img src="/ai-agents/memory2.png" alt="Manage Memories" />
+</Frame>
+
+<Info>
+  Disabling memory or deleting a chat will not erase existing memories.
+</Info>
+
+## Privacy & Limitations
+
+### Personal Memory Space
+
+- Each user has their own private memory base
+- Memories are only accessible to the user who created them
+- Agents maintain separate memories for each user
+
+### Current Limitations
+
+- Maximum of 50 memories per user
+
+<Note>
+  The legacy memory feature has been deprecated. Your existing memories remain
+  available in your agent's knowledge base.
+</Note>
