@@ -126,7 +126,18 @@
     },
     {
       "group": "How to Guides",
-      "pages": ["how-to/integration-setup"]
+      "pages": [
+        "how-to/integration-setup",
+        {
+          "group": "Finding IDs",
+          "icon": "key",
+          "pages": [
+            "how-to/finding-ids/slack-channelid",
+            "how-to/finding-ids/intercom-adminid",
+            "how-to/finding-ids/hubspot-senderactorid"
+          ]
+        }
+      ]
     },
     {
       "group": "API Documentation",
