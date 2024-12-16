@@ -1,0 +1,63 @@
+---
+title: "HubSpot Sender Actor ID"
+icon: "hubspot"
+---
+
+<Info>
+  To enable an agent to send messages through HubSpot, you need to include the
+  Sender Actor ID in the agent's system message or request. The agent will send
+  messages on behalf of the actor whose ID is used.
+</Info>
+
+Finding your HubSpot Sender Actor ID is a simple process:
+
+<Steps>
+  <Step title="Access Profile Settings">
+    Click on your organization name in the top right corner.
+    <Frame>
+      <img
+        src="/how-to/finding-ids/hubspot1.png"
+        alt="HubSpot Organization Menu"
+      />
+    </Frame>
+  </Step>
+
+<Step title="Navigate to Profile & Preferences">
+  Select "Profile & Preferences" from the dropdown menu.
+  <Frame>
+    <img
+      src="/how-to/finding-ids/hubspot2.png"
+      alt="HubSpot Organization Menu"
+    />
+  </Frame>
+</Step>
+
+<Step title="Access User Settings">
+  In the Settings page, locate "Users & Teams" under Account Management in the
+  sidebar. Select the user on whose behalf the messages should be sent.
+  <Frame>
+    <img
+      src="/how-to/finding-ids/hubspot3.png"
+      alt="HubSpot Organization Menu"
+    />
+  </Frame>
+</Step>
+
+  <Step title="Locate Sender Actor ID">
+    The Sender Actor ID will be visible in the URL after "user/" as a number.
+        <Frame>
+      <img
+        src="/how-to/finding-ids/hubspot4.png"
+        alt="HubSpot Organization Menu"
+      />
+    </Frame>
+  </Step>
+</Steps>
+
+<Warning>
+  When using the Sender Actor ID, you must include it in the format "A-[NUMBER]"
+  (where A stands for actor) in the system message for the tool to work
+  properly.
+</Warning>
+
+For example, if your ID is 123456, you would use: `A-123456`
