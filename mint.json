@@ -172,6 +172,7 @@
         "integrations/google-calendar",
         "integrations/gmail",
         "integrations/google-drive",
+        "integrations/google-sheets",
         "integrations/hubspot",
         "integrations/intercom",
         "integrations/notion",
@@ -184,8 +185,13 @@
         "integrations/anthropic",
         "integrations/llama",
         "integrations/mistral",
+        "integrations/e2b",
         "integrations/flux",
-        "integrations/wikipedia"
+        "integrations/wikipedia",
+        "integrations/linkedin",
+        "integrations/x",
+        "integrations/tiktok",
+        "integrations/youtube"
       ]
     }
   ],
