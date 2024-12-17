@@ -111,9 +111,8 @@
         "tools/email-&-communication-tools",
         "tools/calendar-tools",
         "tools/image-generation",
-        "tools/airtable-tools",
         "tools/crm-tools",
-        "tools/intercom-tools"
+        "tools/spreadsheet-tools"
       ]
     },
     {
