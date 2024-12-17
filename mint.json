@@ -106,13 +106,14 @@
     {
       "group": "Tool Docs",
       "pages": [
-        "tools/database",
-        "tools/data-&-web-tools",
         "tools/email-&-communication-tools",
+        "tools/data-&-web-tools",
         "tools/calendar-tools",
-        "tools/image-generation",
+        "tools/database",
+        "tools/spreadsheet-tools",
         "tools/crm-tools",
-        "tools/spreadsheet-tools"
+        "tools/image-generation",
+        "tools/miscellaneous-tools"
       ]
     },
     {
