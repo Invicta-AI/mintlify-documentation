@@ -112,7 +112,7 @@
         "tools/calendar-tools",
         "tools/image-generation",
         "tools/airtable-tools",
-        "tools/hubspot-tools",
+        "tools/crm-tools",
         "tools/intercom-tools"
       ]
     },

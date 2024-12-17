@@ -1,0 +1,171 @@
+---
+title: "CRM Tools"
+sidebarTitle: "CRM"
+icon: "hubspot"
+---
+
+The CRM tools category provides capabilities for managing customer relationships through HubSpot integration. These tools enable AI agents to perform various operations related to deals and notes management.
+
+<Note>
+  HubSpot integration required. [Learn how to set up HubSpot
+  integration](/how-to/integration-setup)
+</Note>
+
+## Available Tools
+
+| Tool Name       | Platform | Description                                                  |
+| --------------- | -------- | ------------------------------------------------------------ |
+| Create Deal     | HubSpot  | Creates a new deal with specified details                    |
+| Create Note     | HubSpot  | Creates a note associated with deals, contacts, or companies |
+| Delete Deal     | HubSpot  | Removes a specific deal                                      |
+| Delete Note     | HubSpot  | Removes a specific note                                      |
+| Find Deals      | HubSpot  | Searches for deals based on various criteria                 |
+| Find Deal by ID | HubSpot  | Retrieves a specific deal using its ID                       |
+| Update Deal     | HubSpot  | Modifies an existing deal's details                          |
+| Update Note     | HubSpot  | Modifies an existing note's content                          |
+
+## Deal Management Tools
+
+### Find Deals
+
+**Description:**
+Search and retrieve deals from HubSpot based on various criteria, including custom filters and sorting options.
+
+**System Tool ID:** `hubspot_find_deals`
+
+**Arguments:**
+
+| Name         | Required | Type          | Description                                         |
+| ------------ | -------- | ------------- | --------------------------------------------------- |
+| query        | Optional | string        | Search query to filter deals                        |
+| limit        | Optional | number        | Maximum number of deals to return (must be ≥ 0)     |
+| after        | Optional | string        | Pagination token for retrieving next set of results |
+| sorts        | Optional | array[string] | List of sorting criteria                            |
+| filterGroups | Optional | array[object] | Complex filtering criteria with multiple conditions |
+
+### Find Deal by ID
+
+**Description:**
+Retrieve a specific deal using its unique identifier.
+
+**System Tool ID:** `hubspot_find_deal_by_id`
+
+**Arguments:**
+
+| Name | Required | Type   | Description     |
+| ---- | -------- | ------ | --------------- |
+| id   | Required | string | HubSpot deal ID |
+
+### Create Deal
+
+**Description:**
+Create a new deal in HubSpot with specified details and associations.
+
+**System Tool ID:** `hubspot_create_deal`
+
+**Arguments:**
+
+| Name        | Required | Type          | Description                            |
+| ----------- | -------- | ------------- | -------------------------------------- |
+| deal_name   | Required | string        | Name of the deal                       |
+| deal_type   | Required | string        | Type of deal (automatically formatted) |
+| description | Required | string        | Detailed description of the deal       |
+| pipeline    | Required | string        | Pipeline name where the deal belongs   |
+| contact_ids | Required | array[string] | Associated contact IDs                 |
+| company_ids | Required | array[string] | Associated company IDs                 |
+| deal_stage  | Required | string        | Current stage of the deal              |
+| amount      | Required | string        | Deal value                             |
+| close_date  | Required | string        | Expected closing date                  |
+
+### Update Deal
+
+**Description:**
+Modify an existing deal's information in HubSpot.
+
+**System Tool ID:** `hubspot_update_deal`
+
+**Arguments:**
+
+| Name        | Required | Type          | Description                    |
+| ----------- | -------- | ------------- | ------------------------------ |
+| deal_id     | Required | string        | ID of the deal to update       |
+| deal_name   | Required | string        | Updated name of the deal       |
+| deal_type   | Required | string        | Updated type of deal           |
+| description | Required | string        | Updated description            |
+| pipeline    | Required | string        | Updated pipeline name          |
+| contact_ids | Required | array[string] | Updated associated contact IDs |
+| company_ids | Required | array[string] | Updated associated company IDs |
+| deal_stage  | Required | string        | Updated deal stage             |
+| amount      | Required | string        | Updated deal value             |
+| close_date  | Required | string        | Updated expected closing date  |
+
+### Delete Deal
+
+**Description:**
+Remove a deal from HubSpot.
+
+**System Tool ID:** `hubspot_delete_deal`
+
+**Arguments:**
+
+| Name    | Required | Type   | Description              |
+| ------- | -------- | ------ | ------------------------ |
+| deal_id | Required | string | ID of the deal to delete |
+
+## Note Management Tools
+
+### Create Note
+
+**Description:**
+Create a new note in HubSpot associated with deals, contacts, or companies.
+
+**System Tool ID:** `hubspot_create_note`
+
+**Arguments:**
+
+| Name        | Required | Type          | Description            |
+| ----------- | -------- | ------------- | ---------------------- |
+| deal_ids    | Required | array[string] | Associated deal IDs    |
+| contact_ids | Required | array[string] | Associated contact IDs |
+| company_ids | Required | array[string] | Associated company IDs |
+| note_body   | Required | string        | Content of the note    |
+
+### Update Note
+
+**Description:**
+Modify an existing note's content and associations in HubSpot.
+
+**System Tool ID:** `hubspot_update_note`
+
+**Arguments:**
+
+| Name        | Required | Type          | Description                    |
+| ----------- | -------- | ------------- | ------------------------------ |
+| note_id     | Required | string        | ID of the note to update       |
+| deal_ids    | Required | array[string] | Updated associated deal IDs    |
+| contact_ids | Required | array[string] | Updated associated contact IDs |
+| company_ids | Required | array[string] | Updated associated company IDs |
+| note_body   | Required | string        | Updated content of the note    |
+
+### Delete Note
+
+**Description:**
+Remove a note from HubSpot.
+
+**System Tool ID:** `hubspot_delete_note`
+
+**Arguments:**
+
+| Name    | Required | Type   | Description              |
+| ------- | -------- | ------ | ------------------------ |
+| note_id | Required | string | ID of the note to delete |
+
+<Tip>
+  When working with dates, ensure they are in a format that can be parsed by the
+  system. The close_date field is automatically converted to a timestamp.
+</Tip>
+
+<Warning>
+  Deleting deals and notes is permanent and cannot be undone. Always verify the
+  correct ID before deletion.
+</Warning>
