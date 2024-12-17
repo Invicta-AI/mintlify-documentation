@@ -1,0 +1,145 @@
+---
+title: "Database Tools"
+icon: "database"
+---
+
+Database tools allow your agents to interact with Airtable and Notion databases. These tools provide capabilities for reading, creating, updating, and deleting data across both platforms.
+
+<Note>
+  Integration required for all tools below. [Learn how to set
+  up.](/how-to/integration-setup)
+</Note>
+
+## Available Tools
+
+| Tool Name                   | Platform | Description                           |
+| --------------------------- | -------- | ------------------------------------- |
+| Airtable Find Bases         | Airtable | Find available bases in Airtable      |
+| Airtable Find Tables        | Airtable | Find tables within a specific base    |
+| Airtable Find Records       | Airtable | Search for records in a table         |
+| Airtable Create Records     | Airtable | Create new records in a table         |
+| Airtable Update Records     | Airtable | Update existing records               |
+| Airtable Delete Records     | Airtable | Delete records from a table           |
+| Notion Find Databases       | Notion   | Search for databases in Notion        |
+| Notion Create Database Item | Notion   | Create new items in a Notion database |
+
+## Airtable Tools
+
+### Airtable Find Bases
+
+**Description:**
+Retrieves a list of all available Airtable bases accessible to your account. This tool is typically used as the first step when working with Airtable data.
+
+**System Tool ID:** `airtable_find_bases`
+
+**Arguments:**
+
+| Name   | Required | Type   | Description                                                           |
+| ------ | -------- | ------ | --------------------------------------------------------------------- |
+| offset | Optional | string | Offset for getting the next page of results when iterating over pages |
+
+### Airtable Find Tables
+
+**Description:**
+Lists all tables within a specified Airtable base. Use this after finding your base ID to discover available tables.
+
+**System Tool ID:** `airtable_find_tables`
+
+**Arguments:**
+
+| Name    | Required | Type   | Description                                                           |
+| ------- | -------- | ------ | --------------------------------------------------------------------- |
+| base_id | Required | string | The ID of the Airtable base                                           |
+| offset  | Optional | string | Offset for getting the next page of results when iterating over pages |
+
+### Airtable Find Records
+
+**Description:**
+Searches for and retrieves records from a specific table in Airtable. Supports filtering to find specific records.
+
+**System Tool ID:** `airtable_find_records`
+
+**Arguments:**
+
+| Name              | Required | Type   | Description                                 |
+| ----------------- | -------- | ------ | ------------------------------------------- |
+| base_id           | Required | string | The ID of the Airtable base                 |
+| table_id          | Required | string | The ID of the table to search               |
+| filter_by_formula | Optional | string | Airtable web API param to search records    |
+| offset            | Optional | string | Offset for getting the next page of results |
+
+### Airtable Create Records
+
+**Description:**
+Creates new records in an Airtable table. Allows batch creation of multiple records in a single request.
+
+**System Tool ID:** `airtable_create_records`
+
+**Arguments:**
+
+| Name     | Required | Type   | Description                                              |
+| -------- | -------- | ------ | -------------------------------------------------------- |
+| base_id  | Required | string | The ID of the Airtable base                              |
+| table_id | Required | string | The ID of the table                                      |
+| records  | Required | array  | Array of record objects, each containing a fields object |
+
+### Airtable Update Records
+
+**Description:**
+Updates existing records in an Airtable table. Allows modification of field values for a specific record.
+
+**System Tool ID:** `airtable_update_record`
+
+**Arguments:**
+
+| Name      | Required | Type   | Description                                         |
+| --------- | -------- | ------ | --------------------------------------------------- |
+| base_id   | Required | string | The ID of the Airtable base                         |
+| table_id  | Required | string | The ID of the table                                 |
+| record_id | Required | string | The ID of the record to update                      |
+| fields    | Required | object | Key-value pairs of field names and their new values |
+
+### Airtable Delete Records
+
+**Description:**
+Deletes a specific record from an Airtable table.
+
+**System Tool ID:** `airtable_delete_record`
+
+**Arguments:**
+
+| Name      | Required | Type   | Description                    |
+| --------- | -------- | ------ | ------------------------------ |
+| base_id   | Required | string | The ID of the Airtable base    |
+| table_id  | Required | string | The ID of the table            |
+| record_id | Required | string | The ID of the record to delete |
+
+## Notion Tools
+
+### Notion Find Databases
+
+**Description:**
+Searches for and lists available databases in your Notion workspace. Supports searching by database title.
+
+**System Tool ID:** `notion_find_databases`
+
+**Arguments:**
+
+| Name   | Required | Type   | Description                                          |
+| ------ | -------- | ------ | ---------------------------------------------------- |
+| query  | Optional | string | Text to search database titles against (Default: '') |
+| cursor | Optional | string | Cursor for pagination of results (Default: '')       |
+
+### Notion Create Database Item
+
+**Description:**
+Creates a new item (page) in a specified Notion database with custom properties.
+
+**System Tool ID:** `notion_create_database_item`
+
+**Arguments:**
+
+| Name        | Required | Type   | Description                                              |
+| ----------- | -------- | ------ | -------------------------------------------------------- |
+| database_id | Required | string | The ID of the Notion database                            |
+| properties  | Required | object | Database property objects that define the item's content |

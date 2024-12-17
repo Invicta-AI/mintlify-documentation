@@ -106,6 +106,7 @@
     {
       "group": "Tool Docs",
       "pages": [
+        "tools/database",
         "tools/data-&-web-tools",
         "tools/email-&-communication-tools",
         "tools/calendar-tools",
