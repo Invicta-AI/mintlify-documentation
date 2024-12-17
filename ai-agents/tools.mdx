@@ -66,41 +66,43 @@ When a tool is bound to a model, the name, description, and JSON schema are prov
 Explore our comprehensive range of tools across various categories:
 
 <CardGroup cols={2}>
-  <Card title="Data and Web Tools" icon="globe" href="/tools/data-&-web-tools">
-    Empower your agents with advanced web browsing, searching, and data scraping
-    capabilities.
+  <Card title="Database" icon="database" href="/tools/database">
+    Manage and manipulate data across Airtable and Notion databases efficiently.
+  </Card>
+  <Card title="Image Generation" icon="image" href="/tools/image-generation">
+    Create and manipulate images using various AI models including Flux and
+    DALL-E.
   </Card>
   <Card
-    title="Email & Communication Tools"
-    icon="envelope-open-text"
-    href="/tools/email-&-communication-tools"
+    title="Web Browsing, Scraping, and Search"
+    icon="globe"
+    href="/tools/web-tools"
   >
-    Enhance communication capabilities with tools for sending emails and
-    messages across platforms.
-  </Card>
-  <Card title="Calendar Tools" icon="calendar" href="/tools/calendar-tools">
-    Streamline scheduling and event management across different calendar
+    Access web content, scrape data, and perform advanced searches across
     platforms.
   </Card>
   <Card
-    title="Image Generation Tools"
-    icon="image"
-    href="/tools/image-generation"
+    title="Email & Communication"
+    icon="envelope"
+    href="/tools/communication-tools"
   >
-    Equip your agents with the ability to generate and manipulate images using
-    various AI models.
+    Send and manage communications across email, Slack, and other platforms.
   </Card>
-  <Card title="Airtable Tools" icon="database" href="/tools/airtable-tools">
-    Enable seamless interaction with Airtable for efficient data management and
-    manipulation.
+  <Card title="Calendar" icon="calendar" href="/tools/calendar-tools">
+    Manage schedules and events across Google and Outlook calendars.
   </Card>
-  <Card title="HubSpot Tools" icon="hubspot" href="/tools/hubspot-tools">
-    Facilitate comprehensive CRM management and customer engagement through
-    HubSpot integration.
+  <Card title="Spreadsheet" icon="table" href="/tools/spreadsheet-tools">
+    Create and manage Google Sheets with comprehensive control options.
   </Card>
-  <Card title="Intercom Tools" icon="intercom" href="/tools/intercom-tools">
-    Enable seamless customer communication and support through Intercom
-    integration.
+  <Card title="CRM " icon="users" href="/tools/crm-tools">
+    Handle customer relationships through HubSpot integration and management.
+  </Card>
+  <Card
+    title="Data Processing & Miscellaneous"
+    icon="gear"
+    href="/tools/data-processing"
+  >
+    Analyze data and handle various utility functions.
   </Card>
 </CardGroup>
 
@@ -108,45 +110,59 @@ Explore our comprehensive range of tools across various categories:
 
 Below is a table of all current tools supported by Invicta AI:
 
-| Tool Name                      | Description                                  |
-| ------------------------------ | -------------------------------------------- |
-| Advanced Web Browsing (Tavily) | Enables advanced web browsing capabilities   |
-| Airtable Create Records        | Creates records in Airtable                  |
-| Airtable Delete Records        | Deletes records from Airtable                |
-| Airtable Find Bases            | Finds bases in Airtable                      |
-| Airtable Find Records          | Finds records in Airtable                    |
-| Airtable Find Tables           | Finds tables in Airtable                     |
-| Airtable Update Records        | Updates records in Airtable                  |
-| Dalle Image Generator          | Generates images using Dalle                 |
-| Flux Dev Image Generator       | Generates images using Flux Dev              |
-| Flux Pro Image Generator       | Generates images using Flux Pro              |
-| Flux Pro 1.1 Image Generator   | Advanced image generation using Flux Pro 1.1 |
-| Flux Schnell Image Generator   | Generates images using Flux Schnell          |
-| Google Calendar Create Event   | Creates events in Google Calendar            |
-| Google Calendar Lookup         | Looks up events in Google Calendar           |
-| Hubspot Create Deal            | Creates deals in Hubspot                     |
-| Hubspot Create Note            | Creates notes in Hubspot                     |
-| Hubspot Delete Deal            | Deletes deals from Hubspot                   |
-| Hubspot Delete Note            | Deletes notes from Hubspot                   |
-| Hubspot Send Message           | Sends messages via Hubspot                   |
-| Hubspot Update Deal            | Updates deals in Hubspot                     |
-| Hubspot Update Note            | Updates notes in Hubspot                     |
-| Import HubSpot Deals           | Imports deals into HubSpot                   |
-| Intercom Send Message          | Sends messages via Intercom                  |
-| Outlook Calendar Create Event  | Creates events in Outlook Calendar           |
-| Outlook Calendar Lookup        | Looks up events in Outlook Calendar          |
-| Reply Email via Gmail          | Replies to emails via Gmail                  |
-| Reply to Email via Outlook     | Replies to emails via Outlook                |
-| Send Email via Gmail           | Sends emails via Gmail                       |
-| Send Email via Outlook         | Sends emails via Outlook                     |
-| Slack Send Message             | Sends messages via Slack                     |
-| Web Browsing (DuckDuckGo)      | Browses the web using DuckDuckGo             |
-| Web Request                    | Makes web requests                           |
-| Website Scraper                | Scrapes information from websites            |
-| Wikipedia Search               | Searches Wikipedia                           |
-| Twitter Search Scraper         | Scrapes Twitter content using search terms   |
-| Twitter Handle Scraper         | Scrapes Twitter content by user handles      |
-| LinkedIn Profile Scraper       | Scrapes LinkedIn profiles from URLs          |
+| #   | Tool Name                            | Description                                                            |
+| --- | ------------------------------------ | ---------------------------------------------------------------------- |
+| 1   | Advanced Web Browsing (Tavily)       | Search by Tavily                                                       |
+| 2   | Airtable Create Records              | Create new records in Airtable database                                |
+| 3   | Airtable Delete Records              | Delete records from Airtable database                                  |
+| 4   | Airtable Find Bases                  | Airtable Find Bases                                                    |
+| 5   | Airtable Find Records                | Airtable Find Records                                                  |
+| 6   | Airtable Find Tables                 | Airtable Find Tables                                                   |
+| 7   | Airtable Update Records              | Update existing records in Airtable database                           |
+| 8   | Data Analysis Tool                   | Analyze, process, and visualize data using Python capabilities         |
+| 9   | Dalle Image Generator                | Generate an image using Open AI's Dalle                                |
+| 10  | Flux Dev                             | A 12 billion parameter rectified flow transformer for image generation |
+| 11  | Flux Pro                             | State-of-the-art image generation with top-tier prompt following       |
+| 12  | Flux Pro 1.1                         | Advanced 12 billion parameter image generation model                   |
+| 13  | Flux Schnell                         | Fast image generation model for local development                      |
+| 14  | Google Calendar Create Event         | Create a new event in Google Calendar                                  |
+| 15  | Google Calendar Lookup               | Search for events in Google Calendar                                   |
+| 16  | Google Sheets Add Rows               | Add new rows to Google Sheets spreadsheet                              |
+| 17  | Google Sheets Create New Spreadsheet | Create a new Google Spreadsheet                                        |
+| 18  | Google Sheets List All Spreadsheets  | Retrieve list of accessible Google Sheets                              |
+| 19  | Google Sheets List All Rows          | Retrieve all rows from specified Sheet and tab                         |
+| 20  | Google Sheets List All Tabs          | Find all tabs in your Google Sheet                                     |
+| 21  | Google Sheets Search Files           | Search for specific Google Sheets files                                |
+| 22  | Google Sheets Update Row Properties  | Update existing row properties                                         |
+| 23  | Google Sheets Update Row Values      | Update specific cell values                                            |
+| 24  | Hubspot Create Deal                  | Create a Hubspot Deal                                                  |
+| 25  | Hubspot Create Note                  | Create a Hubspot note within deal                                      |
+| 26  | Hubspot Delete Deal                  | Delete a Hubspot deal                                                  |
+| 27  | Hubspot Delete Note                  | Delete a Hubspot note                                                  |
+| 28  | Hubspot Find Deals                   | Find Hubspot Deals                                                     |
+| 29  | Hubspot Send Message                 | Send messages from Hubspot accounts                                    |
+| 30  | Hubspot Update Deal                  | Update a Hubspot deal                                                  |
+| 31  | Hubspot Update Note                  | Update note within Hubspot deal                                        |
+| 32  | Import HubSpot Deals                 | Find a HubSpot deal by ID                                              |
+| 33  | Intercom Send Message                | Send message via Intercom                                              |
+| 34  | LinkedIn Profile Scraping            | Extract information from LinkedIn profiles                             |
+| 35  | Long-Term Memory                     | Save and maintain important user information                           |
+| 36  | Notion Create Database Item          | Create new records in Notion database                                  |
+| 37  | Notion Find Databases                | Find Notion Databases                                                  |
+| 38  | Outlook Calendar Create Event        | Create a new event in Outlook Calendar                                 |
+| 39  | Outlook Calendar Lookup              | Search for events in Outlook Calendar                                  |
+| 40  | Reply Email via Gmail                | Reply to emails via Gmail                                              |
+| 41  | Reply to Email via Outlook           | Reply to messages from Microsoft Outlook                               |
+| 42  | Send Email via Gmail                 | Send emails via Gmail                                                  |
+| 43  | Send Email via Outlook               | Send messages from Microsoft Outlook                                   |
+| 44  | Slack Send Message                   | Send a message to a Slack channel                                      |
+| 45  | Twitter Profile Scraping             | Scrape tweets based on Twitter handles                                 |
+| 46  | Twitter Search Term Scraping         | Scrape tweets based on search terms                                    |
+| 47  | Video Transcript Extractor           | Extract insights from video/audio content                              |
+| 48  | Web Browsing (DuckDuckGo)            | Search by DuckDuckGo                                                   |
+| 49  | Web Request                          | Make web request to any website                                        |
+| 50  | Website Scraper                      | Scrape the content of a website                                        |
+| 51  | Wikipedia Search                     | Search Wikipedia pages                                                 |
 
 ## Continuous Expansion
 
