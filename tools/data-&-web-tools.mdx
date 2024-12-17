@@ -1,192 +1,133 @@
 ---
-sidebarTitle: "Data & Web"
+title: "Web Browsing & Scraping Tools"
+sidebarTitle: "Web Browsing & Scraping"
 icon: "globe"
 ---
 
-Empower your agents with advanced web browsing, searching, and data scraping capabilities.
+Web Browsing and Scraping tools enable AI Agents to gather information from various online sources, including search engines, social media platforms, websites, and multimedia content. These tools provide capabilities for both broad web searches and targeted data extraction.
 
-## List of Data & Web Tools
+## Available Tools
 
-| Tool Name                      | Description                                           |
-| ------------------------------ | ----------------------------------------------------- |
-| Scrape Web Text                | Extract visible text content from webpages            |
-| DuckDuckGo Search              | Perform web searches using DuckDuckGo                 |
-| Tavily Search                  | Execute web searches using Tavily Search API          |
-| Wikipedia                      | Query and retrieve information from Wikipedia         |
-| Web Request                    | Perform customizable HTTP requests                    |
-| LinkedIn Scrape Profiles       | Scrape LinkedIn profiles by URLs                      |
-| Twitter Scrape by Search Terms | Scrape Twitter data based on search terms             |
-| Twitter Scrape by Handles      | Scrape Twitter data based on Twitter handles/profiles |
+| Tool Name                  | Platform/Category | Description                                          |
+| -------------------------- | ----------------- | ---------------------------------------------------- |
+| DuckDuckGo Search          | Search Engine     | Basic web search using DuckDuckGo                    |
+| Tavily Search              | Search Engine     | Advanced semantic search with AI-optimized results   |
+| LinkedIn Profile Scraper   | Social Media      | Extracts detailed information from LinkedIn profiles |
+| Twitter Profile Scraper    | Social Media      | Collects data from Twitter/X user profiles           |
+| Twitter Search Scraper     | Social Media      | Gathers tweets based on search terms                 |
+| Website Scraper            | Web               | Extracts text content from web pages                 |
+| Video Transcript Extractor | Multimedia        | Retrieves transcripts from video/audio content       |
+| Wikipedia Search           | Knowledge Base    | Searches and retrieves Wikipedia article content     |
 
-## Scrape Web Text
+## Tool Details
 
-### Description
+### DuckDuckGo Search
 
-This tool enables agents to extract visible text content from a given webpage URL. It's ideal for web scraping tasks where the goal is to retrieve readable information from a specific web page, allowing agents to gather data efficiently from online sources.
+**Description:**
+A basic web search tool that queries DuckDuckGo search engine to find relevant web pages and information.
 
-### System Tool ID and Tool Description for Agents
+**System Tool ID:** `duckduckgo-search`
 
-**Tool ID:** scrape_web_text
-**Description:** Extracts visible text content from a given webpage URL. Ideal for web scraping tasks where the goal is to retrieve readable information from a URL.
+**Arguments:**
+| Name | Required | Type | Description |
+|------|----------|------|-------------|
+| maxResults | Optional (default: 5) | number | Maximum number of search results to return |
 
-### Arguments
+### Tavily Search
 
-| Name | Required | Type   | Description                      |
-| ---- | -------- | ------ | -------------------------------- |
-| url  | Required | string | The URL of the webpage to scrape |
+**Description:**
+An advanced search tool that uses AI to provide more relevant and contextual search results.
 
-<Note>
-  This tool focuses on extracting readable text content, which can be
-  particularly useful for gathering information from articles, blog posts, or
-  other text-heavy web pages.
-</Note>
+**System Tool ID:** `tavily-search`
 
-## DuckDuckGo Search
+**Arguments:**
+| Name | Required | Type | Description |
+|------|----------|------|-------------|
+| maxResults | Optional (default: 5) | number | Maximum number of search results to return |
 
-### Description
+### LinkedIn Profile Scraper
 
-This tool allows agents to perform web searches using the DuckDuckGo search engine. It's useful for retrieving up-to-date information from the internet, providing agents with a broad view of available online content.
+**Description:**
+Extracts comprehensive information from LinkedIn profiles including work experience, education, skills, and other public profile data.
 
-### System Tool ID and Tool Description for Agents
+**System Tool ID:** `linkedin_scrape_profiles_by_urls`
 
-**Tool ID:** getDuckDuckGoSearch
-**Description:** Performs a web search using DuckDuckGo and returns the results.
+**Arguments:**
+| Name | Required | Type | Description |
+|------|----------|------|-------------|
+| profileUrls | Required | string[] | Array of LinkedIn profile URLs to scrape |
 
-### Arguments
+### Twitter Profile Scraper
 
-| Name  | Required | Type   | Description                     |
-| ----- | -------- | ------ | ------------------------------- |
-| input | Required | string | The search query to be executed |
+**Description:**
+Collects data from Twitter/X user profiles including tweets, profile information, and public metrics.
 
-<Note>This tool is configured to return a maximum of 5 search results.</Note>
+**System Tool ID:** `twitter_scrape_by_handles`
 
-## Tavily Search
+**Arguments:**
+| Name | Required | Type | Description |
+|------|----------|------|-------------|
+| twitterHandles | Required | string[] | Array of Twitter handles to scrape |
+| start | Optional (default: '') | string | Start date in YYYY-MM-DD format |
+| end | Optional (default: '') | string | End date in YYYY-MM-DD format |
+| sort | Optional (default: 'Top') | enum: ['Latest', 'Top'] | Sort order of tweets |
+| maxItems | Optional (default: '10') | enum: ['5', '10', '25', '50', '100'] | Maximum number of items to return |
 
-### Description
+### Twitter Search Scraper
 
-This tool enables agents to perform web searches using the Tavily Search API. It provides an alternative search method that can be useful for retrieving diverse search results, potentially offering different perspectives or sources compared to other search engines.
+**Description:**
+Searches and extracts tweets based on specific search terms or keywords.
 
-### System Tool ID and Tool Description for Agents
+**System Tool ID:** `twitter_scrape_by_search_terms`
 
-**Tool ID:** getTavilySearch
-**Description:** Executes a web search using the Tavily Search API and returns the results.
+**Arguments:**
+| Name | Required | Type | Description |
+|------|----------|------|-------------|
+| searchTerms | Required | string[] | Array of search terms |
+| start | Optional (default: '') | string | Start date in YYYY-MM-DD format |
+| end | Optional (default: '') | string | End date in YYYY-MM-DD format |
+| sort | Optional (default: 'Top') | enum: ['Latest', 'Top'] | Sort order of tweets |
+| maxItems | Optional (default: '10') | enum: ['5', '10', '25', '50', '100'] | Maximum number of items to return |
 
-### Arguments
+### Website Scraper
 
-| Name  | Required | Type   | Description                     |
-| ----- | -------- | ------ | ------------------------------- |
-| input | Required | string | The search query to be executed |
+**Description:**
+Extracts visible text content from any webpage URL, making it ideal for gathering information from articles, blog posts, and other web content.
 
-<Note>
-  This tool is configured to return a maximum of 5 search results and consumes
-  Compute Points
-</Note>
+**System Tool ID:** `scrape_web_text`
 
-## Wikipedia
+**Arguments:**
+| Name | Required | Type | Description |
+|------|----------|------|-------------|
+| url | Required | string | URL of the webpage to scrape |
 
-### Description
+### Video Transcript Extractor
 
-This tool allows agents to query Wikipedia and retrieve information from its vast knowledge base. It's particularly useful for gathering factual information on a wide range of topics, providing quick access to encyclopedic knowledge.
+**Description:**
+Retrieves transcripts from various online video and audio content across different platforms.
 
-### System Tool ID and Tool Description for Agents
+**System Tool ID:** `video_transcript`
 
-**Tool ID:** getWikipedia
-**Description:** Queries Wikipedia and returns relevant information based on the input.
+**Arguments:**
+| Name | Required | Type | Description |
+|------|----------|------|-------------|
+| video_url | Required | string | URL of the video/audio content |
+| language | Optional | string | Language code for the transcript (e.g., 'en', 'ru') |
 
-### Arguments
+### Wikipedia Search
 
-| Name  | Required | Type   | Description                        |
-| ----- | -------- | ------ | ---------------------------------- |
-| query | Required | string | The Wikipedia query to be executed |
+**Description:**
+Searches Wikipedia articles and retrieves relevant content and information.
 
-<Note>
-  This tool is configured to return the top 3 results with a maximum content
-  length of 4000 characters per result.
-</Note>
+**System Tool ID:** `wikipedia-query-run`
 
-## Web Request
+**Arguments:**
+| Name | Required | Type | Description |
+|------|----------|------|-------------|
+| topKResults | Optional (default: 3) | number | Number of top results to return |
+| maxDocContentLength | Optional (default: 4000) | number | Maximum content length per document |
 
-### Description
-
-This tool allows agents to perform customizable HTTP requests to specified URLs. It's ideal for interacting with APIs or retrieving raw webpage data, providing flexibility in how agents can interact with web resources and services.
-
-### System Tool ID and Tool Description for Agents
-
-**Tool ID:** web_request
-**Description:** Performs a customizable HTTP request to a specified URL. Ideal for interacting with APIs or retrieving raw webpage data.
-
-### Arguments
-
-| Name           | Required | Type   | Description                                           |
-| -------------- | -------- | ------ | ----------------------------------------------------- |
-| url            | Required | string | The URL to send the request to                        |
-| request_method | Required | string | The HTTP method to use (e.g., GET, POST, PUT, DELETE) |
-| request_body   | Optional | object | The body of the request (default: {})                 |
-
-<Warning>
-  Ensure that the use of this tool complies with the terms of service of the
-  target websites and APIs.
-</Warning>
-
-These Data & Web Tools provide agents with powerful capabilities to interact with web resources, search for information, and extract data from websites. By leveraging these tools, agents can access a wealth of online information and perform complex web-related tasks, enhancing their ability to assist in various scenarios requiring up-to-date information or specific web interactions.
-
-## LinkedIn Scrape Profiles
-
-### Description
-
-This tool allows agents to scrape LinkedIn profiles and retrieve comprehensive information about leads. It's particularly useful for gathering detailed professional data from multiple LinkedIn profiles simultaneously.
-
-### System Tool ID and Tool Description for Agents
-
-**Tool ID:** linkedin_scrape_profiles_by_urls
-**Description:** Scrape LinkedIn profiles and get full information of the lead. If there are several URLs, run only once combining them into the array.
-
-### Arguments
-
-| Name        | Required | Type     | Description                     |
-| ----------- | -------- | -------- | ------------------------------- |
-| profileUrls | Required | string[] | LinkedIn profile URLs to scrape |
-
-## Twitter Scrape by Search Terms
-
-### Description
-
-This tool enables agents to search and extract data from Twitter based on specific search terms. It's valuable for gathering recent tweets, trending topics, or discussions related to particular keywords or phrases.
-
-### System Tool ID and Tool Description for Agents
-
-**Tool ID:** twitter_scrape_by_search_terms
-**Description:** Twitter Scraper searches and extracts data based on search terms. If there are several search terms, run only once combining them into the array.
-
-### Arguments
-
-| Name        | Required | Type     | Description                                                                                |
-| ----------- | -------- | -------- | ------------------------------------------------------------------------------------------ |
-| searchTerms | Required | string[] | Search terms to scrape                                                                     |
-| start       | Optional | string   | Tweets from this date. Use YYYY-MM-DD format. Default is an empty string.                  |
-| end         | Optional | string   | Tweets until this date. Use YYYY-MM-DD format. Default is an empty string.                 |
-| sort        | Optional | string   | Sort order of the tweets. Options: 'Latest' or 'Top'. Default is 'Top'.                    |
-| maxItems    | Optional | string   | Maximum number of items to return. Options: '5', '10', '25', '50', '100'. Default is '10'. |
-
-## Twitter Scrape by Handles
-
-### Description
-
-This tool allows agents to search and extract data from Twitter based on specific Twitter handles or profiles. It's useful for monitoring tweets from particular accounts, analyzing user activity, or gathering information about specific Twitter users.
-
-### System Tool ID and Tool Description for Agents
-
-**Tool ID:** twitter_scrape_by_handles
-**Description:** Twitter Scraper searches and extracts data based on Twitter handles/profiles. If there are several handles/profiles, run only once combining them into the array.
-
-### Arguments
-
-| Name           | Required | Type     | Description                                                                                |
-| -------------- | -------- | -------- | ------------------------------------------------------------------------------------------ |
-| twitterHandles | Required | string[] | Twitter handles to scrape                                                                  |
-| start          | Optional | string   | Tweets from this date. Use YYYY-MM-DD format. Default is an empty string.                  |
-| end            | Optional | string   | Tweets until this date. Use YYYY-MM-DD format. Default is an empty string.                 |
-| sort           | Optional | string   | Sort order of the tweets. Options: 'Latest' or 'Top'. Default is 'Top'.                    |
-| maxItems       | Optional | string   | Maximum number of items to return. Options: '5', '10', '25', '50', '100'. Default is '10'. |
-
-These Data & Web Tools provide agents with powerful capabilities to interact with web resources, search for information, and extract data from websites, including specialized tools for LinkedIn and Twitter. By leveraging these tools, agents can access a wealth of online information and perform complex web-related tasks, enhancing their ability to assist in various scenarios requiring up-to-date information or specific web interactions.
+<Tip>
+  When using search and scraping tools, be mindful of rate limits and usage
+  quotas that may apply to specific services.
+</Tip>
