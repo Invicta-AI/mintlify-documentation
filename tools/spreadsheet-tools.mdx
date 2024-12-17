@@ -1,0 +1,133 @@
+---
+title: "Spreadsheet Tools"
+sidebarTitle: "Spreadsheet"
+icon: "table"
+---
+
+The Google Sheets tools enable AI Agents to interact with Google Sheets spreadsheets, allowing them to create, read, update, and manage spreadsheet data and properties.
+
+<Note>
+  Google Sheets integration required. [Learn how to set
+  up.](/how-to/integration-setup)
+</Note>
+
+## Available Tools
+
+| Tool Name              | Description                                                         |
+| ---------------------- | ------------------------------------------------------------------- |
+| Add Rows               | Append new rows to a Google Sheets spreadsheet                      |
+| Create New Spreadsheet | Create a new spreadsheet file in Google Sheets                      |
+| List All Spreadsheets  | Retrieve a list of all spreadsheet files in a Google Sheets account |
+| List All Rows          | Get all rows from a specific tab in a spreadsheet                   |
+| List All Tabs          | View all tabs in a Google Sheets spreadsheet                        |
+| Search Files           | Search for specific spreadsheet files                               |
+| Update Row Properties  | Update structural or formatting properties of rows                  |
+| Update Row Values      | Modify the content/values of specific rows                          |
+
+## Google Sheets
+
+### Add Rows
+
+**Description:** Adds new rows to the end of a specified Google Sheets spreadsheet tab.
+
+**System Tool ID:** `google_sheets_append_rows`
+
+**Arguments:**
+| Name | Required | Type | Description |
+|------|----------|------|-------------|
+| spreadsheet_id | Required | string | The ID of the target spreadsheet |
+| tab_id | Required | string | The ID of the specific tab |
+| values | Required | array | Array of arrays containing row values as strings |
+
+### Create New Spreadsheet
+
+**Description:** Creates a new Google Sheets spreadsheet with specified name.
+
+**System Tool ID:** `google_sheets_create_file`
+
+**Arguments:**
+| Name | Required | Type | Description |
+|------|----------|------|-------------|
+| name | Required | string | Name for the new spreadsheet |
+
+### List All Spreadsheets
+
+**Description:** Retrieves a list of all spreadsheet files in the connected Google Sheets account.
+
+**System Tool ID:** `google_sheets_find_all_files`
+
+**Arguments:**
+| Name | Required | Type | Description |
+|------|----------|------|-------------|
+| cursor | Optional | string | Pagination cursor for large lists |
+
+### List All Rows
+
+**Description:** Retrieves all rows from a specified tab in a Google Sheets spreadsheet.
+
+**System Tool ID:** `google_sheets_find_all_rows`
+
+**Arguments:**
+| Name | Required | Type | Description |
+|------|----------|------|-------------|
+| spreadsheet_id | Required | string | ID of the target spreadsheet |
+| tab_id | Required | string | ID of the specific tab |
+| cursor | Optional | string | Pagination cursor for large datasets |
+
+### List All Tabs
+
+**Description:** Retrieves all tabs present in a specified Google Sheets spreadsheet.
+
+**System Tool ID:** `google_sheets_find_all_tabs`
+
+**Arguments:**
+| Name | Required | Type | Description |
+|------|----------|------|-------------|
+| spreadsheet_id | Required | string | ID of the target spreadsheet |
+| cursor | Optional | string | Pagination cursor for large lists |
+
+### Search Files
+
+**Description:** Searches for Google Sheets files based on a query string.
+
+**System Tool ID:** `google_sheets_search_files`
+
+**Arguments:**
+| Name | Required | Type | Description |
+|------|----------|------|-------------|
+| query | Required | string | Search query to find specific files |
+| cursor | Optional | string | Pagination cursor for search results |
+
+### Update Row Properties
+
+**Description:** Updates structural or formatting properties of rows in a Google Sheets spreadsheet.
+
+**System Tool ID:** `google_sheets_update_rows`
+
+**Arguments:**
+| Name | Required | Type | Description |
+|------|----------|------|-------------|
+| spreadsheet_id | Required | string | ID of the target spreadsheet |
+| body | Required | object | Request body containing update operations |
+
+<Info>
+  This tool uses the `batchUpdate` endpoint and is specifically for structural
+  or formatting changes to the spreadsheet.
+</Info>
+
+### Update Row Values
+
+**Description:** Updates the content/values of specific rows in a Google Sheets spreadsheet.
+
+**System Tool ID:** `google_sheets_update_rows_values`
+
+**Arguments:**
+| Name | Required | Type | Description |
+|------|----------|------|-------------|
+| spreadsheet_id | Required | string | ID of the target spreadsheet |
+| body | Required | object | Request body containing the values to update |
+
+<Info>
+  This tool uses the `values:batchUpdate` endpoint and is specifically for
+  updating cell values/content.
+</Info>
