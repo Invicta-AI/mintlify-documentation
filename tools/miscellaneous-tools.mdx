@@ -1,0 +1,62 @@
+---
+title: "Data Processing & Miscellaneous Tools"
+sidebarTitle: "Data Processing"
+icon: "gear"
+---
+
+This category contains tools for processing data, managing long-term memory, and making web requests. These tools enable AI agents to perform complex data analysis and maintain contextual information.
+
+## Available Tools
+
+| Tool Name        | Category          | Description                                     |
+| ---------------- | ----------------- | ----------------------------------------------- |
+| Code Interpreter | Data Analysis     | Executes Python code in a secure sandbox        |
+| Long-Term Memory | Memory Management | Saves and manages biographical user information |
+| Web Request      | Networking        | Performs HTTP requests to external APIs         |
+
+## Tool Details
+
+### Code Interpreter
+
+**Description:** Provides a secure Python execution environment for data analysis and processing tasks.
+
+**System Tool ID:** `e2b_code_interpreter`
+
+**Arguments:**
+| Name | Required | Type | Description |
+|------|----------|------|-------------|
+| code | Required | String | Python code to execute |
+
+<Warning>
+  Code is executed in a sandboxed environment for security. Some operations may
+  be restricted.
+</Warning>
+
+### Long-Term Memory
+
+**Description:** Manages persistent storage of user biographical information and preferences.
+
+**System Tool ID:** `bio_save_data`
+
+**Arguments:**
+| Name | Required | Type | Description |
+|------|----------|------|-------------|
+| user_message | Required | String | Message containing biographical information to store |
+
+<Note>
+  Limited to 50 memory entries per user. Older entries may need to be removed to
+  store new information.
+</Note>
+
+### Web Request
+
+**Description:** Performs HTTP requests to interact with external APIs or retrieve webpage data.
+
+**System Tool ID:** `web_request`
+
+**Arguments:**
+| Name | Required | Type | Description |
+|------|----------|------|-------------|
+| url | Required | String | Target URL for the request |
+| request_method | Required | String | HTTP method (GET, POST, etc.) |
+| request_body | Optional | Object | Request body data |
