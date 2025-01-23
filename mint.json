@@ -58,11 +58,7 @@
   "navigation": [
     {
       "group": "Basics",
-      "pages": [
-        "introduction",
-        "basics/compute-points",
-        "basics/available-llms"
-      ]
+      "pages": ["introduction", "basics/credits", "basics/available-llms"]
     },
     {
       "group": "AI Agents",
@@ -155,7 +151,7 @@
             "help/how-secure-is-my-data",
             "help/can-I-try-Invicta-AI-for-free",
             "help/does-invicta-ai-use-my-conversations-or-data-to-train-ai",
-            "help/do-compute-points-roll-over"
+            "help/do-credits-roll-over"
           ]
         }
       ]

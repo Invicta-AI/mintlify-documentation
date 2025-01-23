@@ -1,0 +1,106 @@
+---
+icon: "microchip"
+---
+
+## What are Credits?
+
+Credits are a metric used to quantify the consumption of computing resources when tasks are performed by our AI agents. Each agent request executed, including sending chat messages, triggering agents, or interacting with agents via widgets, consumes Credits.
+
+<Info>
+  Credits provide a standardized way to measure resource usage across different
+  AI models and tools, allowing for fair and transparent billing.
+</Info>
+
+## How Credits are Calculated
+
+The calculation of Credits is based on several factors:
+
+1. **Token Processing**: The number of tokens (input + output + reasoning) processed by a specific Language Model (LLM) per request.
+
+   - Larger models like GPT-4o and Claude-3.5 use more credits than simpler models like Llama 3 or Mistral Large.
+   - This includes your request, the agent's output, and any tokens processed by AI teammates invoked.
+
+2. **Agent Complexity**: The size of the system message and other complexity factors of the agent.
+
+3. **Tool Usage**: Some specific tools consume a fixed number of Credits per request.
+   - For example, DALL-E 3 consumes 13 credits per request.
+
+<Note>
+  You can view the credit consumption per 1K tokens for each LLM in the LLM
+  selector in the ChatUI or on our [Available LLMs page](/available-llms).
+</Note>
+
+<Note>
+  You can view the amount of credits consumed by tools by hovering over the
+  enabled tool in the ChatUI; it will appear in the popover card. (Coming soon:
+  Tools that consume credits will have a '?' icon to view the tooltip showing
+  the credit cost associated with it.)
+</Note>
+
+## Monitoring Your Compute Point Usage
+
+Users can keep track of their consumption in two ways:
+
+1.  **Progress Slider**:
+
+        - On desktop: Hover over the progress slider in the bottom left corner, just below your profile button.
+        - On mobile: Open the sidebar to view your credit usage.
+          {" "}
+
+               <Frame><img src="/basics/slider.png" style={{ borderRadius: '0.5rem' }} /></Frame>
+
+        This shows how many credits you have left and when they will reset.
+
+2.  **Analytics Dashboard**:
+
+<Steps>
+  <Step title="Access User Profile">
+    Click on your user profile in the bottom left corner.
+  </Step>
+  <Step title="Navigate">Click on the "Analytics Page".</Step>
+  <Step title="View Reports">
+    Here, you'll find detailed reports on your compute point consumption and
+    other analytics.
+    <Frame>
+      <img src="/basics/cp-usage.png" style={{ borderRadius: "0.5rem" }} />
+    </Frame>
+  </Step>
+</Steps>
+
+## Obtaining Credits
+
+Credits can be obtained through:
+
+1. **Monthly Allocation**: Based on your subscription tier.
+2. **Purchases**: Available in bundles of 1000 credits (these do not expire).
+3. **Free Usage**: Free users receive 25 credits daily.
+
+### Rollover Policy
+
+<Check>
+  Purchased credits (bundles of 1000) DO roll over and do not expire.
+</Check>
+<Warning>Monthly credits and daily free credits DO NOT roll over.</Warning>
+
+## Business or Enterprise Credits
+
+For Business or Enterprise customers, your company gets a pool of monthly credits. All users added to the organisation will consume credits from that pool. You can view them in the "Organisation" page.
+
+<Note>
+  If a user has both organisational and personal credit allocations,
+  organisational credits will be consumed first. Personal credits will be used
+  only if organisational credits run out.
+</Note>
+
+## Optimizing Credit Usage
+
+<Tip>
+  To conserve credits, create new conversation threads frequently instead of
+  maintaining one long thread. Long conversations can disproportionately consume
+  credits due to the large input token window required for each subsequent
+  request.
+</Tip>
+
+## Conclusion
+
+Understanding and managing your Compute Point usage is crucial for optimizing your interaction with AI agents. By monitoring your consumption and being aware of how different tasks and models affect credit usage, you can make informed decisions about resource allocation and cost management.
