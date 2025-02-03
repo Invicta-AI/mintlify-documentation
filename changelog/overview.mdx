@@ -1,40 +1,58 @@
 ---
 title: "Product Updates"
 description: "New updates and improvements on Invicta AI"
-mode: "wide"
+mode: "default"
 ---
 
-<Update label="January 27, 2025">
+<Update label="February 2, 2025">
+## **DeepSeek LLMs and more**  
+Added DeepSeek's newest LLMs:  
+- **R1**: (open-source reasoning specialist) + **V3** (enterprise-grade inference)
 
-## Stripe Integration
+New OpenAI LLM:
 
-Added support for Stripe to streamline your financial workflows and enhance payment management capabilities.
+- Introduced ChatGPT-4o-latest (auto-updating to OpenAI latest ChatGPT version)
 
-1. Create Refunds by Charge ID
-    * Easily process refunds by providing the charge ID.
-2. Delete Subscription by ID
-    * Simplify subscription management by deleting subscriptions with a specific ID.
-3. Find Invoices by Subscription ID
-    * Retrieve all invoices linked to a specific subscription for better tracking and transparency.
-4. Find Subscriptions by Customer ID
-    * Fetch subscriptions associated with a specific customer ID to manage customer accounts more effectively.
-5. Search Customers by Email
-    * Locate customer profiles quickly using their email addresses.
+## **Agent Configuration Limits**
 
-## Human-in-the-Loop for Tools
+Set maximum configuration parameters:
 
-We've introduced a Human-in-the-Loop (HITL) mechanism to give users greater control over tool execution.
-- Before executing any requested tool, users can now approve or reject the action.
-- Approve Action: The requested tool will run as intended.
-- Reject Action: The tool will not be executed, and the AI agent will be notified about the rejection for context.
+- 10 tools per agent
+- 10 collaborators per agent
 
-## AI Agent Stability Enhancements
+</Update>
 
-Each AI agent can now have a maximum of 10 tools and 10 teammates.
+<Update label="January 27, 2024">
+## **Human-in-the-Loop for tools**  
+Added tool execution approval controls:  
+- Per-tool approval settings in Builder
+- Add custom reasons when rejecting actions
+- Get notified through email and sidebar indicators
 
-## Knowledge Base Updates
+</Update>
 
-Free users can now upload up to 50 files to their knowledge base.
+<Update label="January 19, 2025">
+## **Pricing Model Restructure**
+
+- Introduced flexible credit bundles for Pro/Business tiers
+- Business plans now include 10 default user seats
+
+</Update>
+
+<Update label="January 8, 2024">
+## **Stripe Integration & Tools**  
+Added 5 new Stripe tools including:  
+- Charge refund management  
+- Subscription lifecycle controls  
+- Customer/subscription search capabilities
+
+## **System Terminology Update**
+
+Renamed "compute points" to "credits" across all platform interfaces.
+
+## **Free Tier Enhancement**
+
+Increased Knowledge Base entry limit from 5 to 50 entries for free accounts.
 
 </Update>
 
