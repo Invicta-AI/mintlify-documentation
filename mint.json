@@ -109,6 +109,7 @@
         "tools/spreadsheet-tools",
         "tools/crm-tools",
         "tools/image-generation",
+        "tools/payment-processing",
         "tools/miscellaneous-tools"
       ]
     },
@@ -175,6 +176,7 @@
         "integrations/outlook",
         "integrations/outlook-calendar",
         "integrations/slack",
+        "integrations/stripe",
         "integrations/tavily",
         "integrations/duckduckgo",
         "integrations/openai",

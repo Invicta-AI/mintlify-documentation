@@ -1,0 +1,103 @@
+---
+title: "Payment Processing Tools"
+sidebarTitle: "Payment Processing"
+icon: "credit-card"
+---
+
+The Payment Processing tools category provides capabilities for managing payments, subscriptions, and refunds through Stripe integration. These tools enable AI agents to perform various operations related to payment processing and customer management.
+
+<Note>
+  Stripe integration required. [Learn how to set up Stripe
+  integration](/how-to/integration-setup)
+</Note>
+
+## Available Tools
+
+| Tool Name | Platform | Description |
+| --------- | -------- | ----------- |
+| Create Refunds by Charge ID | Stripe | Initiate refunds for specific charges |
+| Delete Subscription by ID | Stripe | Remove specific subscriptions |
+| Find Invoices by Subscription ID | Stripe | Retrieve subscription-related invoices |
+| Find Subscriptions by Customer ID | Stripe | Get customer-specific subscriptions |
+| Search Customers by Email | Stripe | Find customers using email addresses |
+
+## Refund Management
+
+### Create Refunds by Charge ID
+
+**Description:**
+Initiate a refund for a specific charge using its unique identifier.
+
+**System Tool ID:** `stripe_create_refunds_by_charge_id`
+
+**Arguments:**
+
+| Name | Required | Type | Description |
+| ---- | -------- | ---- | ----------- |
+| charge_id | Required | string | The ID of the charge to refund |
+
+## Subscription Management
+
+### Delete Subscription by ID
+
+**Description:**
+Remove a subscription by providing its unique identifier.
+
+**System Tool ID:** `stripe_delete_subscription_by_id`
+
+**Arguments:**
+
+| Name | Required | Type | Description |
+| ---- | -------- | ---- | ----------- |
+| subscription_id | Required | string | The ID of the subscription to delete |
+
+### Find Invoices by Subscription ID
+
+**Description:**
+Retrieve all invoices associated with a specific subscription.
+
+**System Tool ID:** `stripe_find_invoices_by_subscription_id`
+
+**Arguments:**
+
+| Name | Required | Type | Description |
+| ---- | -------- | ---- | ----------- |
+| subscription_id | Required | string | The ID of the subscription to find invoices for |
+
+### Find Subscriptions by Customer ID
+
+**Description:**
+Retrieve a list of subscriptions associated with a specific customer.
+
+**System Tool ID:** `stripe_find_subscriptions_by_customer_id`
+
+**Arguments:**
+
+| Name | Required | Type | Description |
+| ---- | -------- | ---- | ----------- |
+| customer_id | Required | string | The ID of the customer to find subscriptions for |
+
+## Customer Management
+
+### Search Customers by Email
+
+**Description:**
+Search customers in the collection by their email address.
+
+**System Tool ID:** `stripe_search_customers_by_email`
+
+**Arguments:**
+
+| Name | Required | Type | Description |
+| ---- | -------- | ---- | ----------- |
+| email | Required | string | The email address to search for |
+
+<Warning>
+  Be cautious when handling payment-related operations. Always verify the correct IDs
+  before performing any actions, especially for refunds and subscription deletions.
+</Warning>
+
+<Tip>
+  Keep track of all payment operations and maintain proper logs for auditing
+  purposes. This is especially important for refunds and subscription changes.
+</Tip>
