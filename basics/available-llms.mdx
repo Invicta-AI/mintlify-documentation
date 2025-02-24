@@ -3,59 +3,52 @@ title: "Available LLMs"
 icon: brain
 ---
 
-## Introduction
-
-Our platform provides access to a diverse range of Language Learning Models (LLMs) from leading AI research companies such as OpenAI, Anthropic, Meta, and Mistral. These models are integral to the function of AI agents within our ecosystem, each offering unique capabilities and performance characteristics tailored to different user needs.
-
-Below is an overview of the LLMs currently available on our platform, including their Elo ratings, speed metrics, and compute point consumption.
+Our platform provides access to cutting-edge Language Learning Models (LLMs) from leading AI providers. Each model is optimized for diverse tasks with unique capabilities—including high context windows, multimodal (vision) input, and integrated tool use. Note that credits represent resource consumption per 1K tokens.
 
 ## Available Models
 
-| Model Name     | Provider   | Elo Rating 🏆 | Context Window Size | CPs / 1K Tokens | Tool Use |
-| -------------- | ---------- | ------------- | ------------------- | --------------- | -------- |
-| GPT-4o         | OpenAI     | 1287          | 128,000 tokens      | 1.16667         | Yes      |
-| Claude 3.5     | Anthropic  | 1271          | 200,000 tokens      | 1.16667         | No       |
-| GPT-4 Turbo    | OpenAI     | 1257          | 128,000 tokens      | 1.66667         | Yes      |
-| Claude 3       | Anthropic  | 1249          | 200,000 tokens      | 1.16667         | No       |
-| Llama3-70B     | Meta       | 1246          | 8,192 tokens        | 1.11667         | No       |
-| GPT-4o mini    | OpenAI     | 1238          | 128,000 tokens      | 0.08333         | Yes      |
-| Mistral Large  | Mistral AI | 1156          | 32,000 tokens       | 1.06668         | Yes      |
-| Claude 2       | Anthropic  | 1119          | 200,000 tokens      | 4.16667         | No       |
-| Mistral Small  | Mistral AI | 1114          | 32,000 tokens       | 0.26667         | Yes      |
-| Claude Instant | Anthropic  | 1109          | 100,000 tokens      | 0.41667         | No       |
+Below are the enabled models currently available on our platform – sorted by Elo rating:
 
-## Elo Rating / Intelligence Points
+| Model Name        | Provider   | Elo Rating | Context Window | Credits/1K Tokens | Vision | Tool Use |
+| :---------------- | :--------- | ---------: | -------------: | ----------------: | :----: | :------: |
+| ChatGPT-4o Latest | OpenAI     |       1365 |           128k |             4.126 |   ✅   |    ✅    |
+| DeepSeek R1       | DeepSeek   |       1358 |           128k |             5.600 |   ❌   |    ✅    |
+| o3-mini           | OpenAI     |       1325 |           200k |             0.908 |   ❌   |    ✅    |
+| Claude 3.5 Sonnet | Anthropic  |       1283 |           200k |             2.615 |   ✅   |    ✅    |
+| GPT-4o mini       | OpenAI     |       1272 |           128k |             0.112 |   ❌   |    ✅    |
+| GPT-4o            | OpenAI     |       1265 |           128k |             2.137 |   ✅   |    ✅    |
+| Mistral Large     | Mistral AI |       1251 |            32k |             1.650 |   ❌   |    ✅    |
+| Llama 3.1 70B     | Meta       |       1247 |           131k |             0.487 |   ❌   |    ✅    |
+| Mistral Small     | Mistral AI |       1222 |            32k |             0.165 |   ❌   |    ✅    |
 
-We have adapted the Elo rating system system to rate the intelligence points of LLMs based on their performance in natural language understanding and generation tasks. The ratings are sourced from the LMSYS Chatbot Arena Leaderboard, which is a crowdsourced open platform for evaluating LLMs through human preference votes. For more details, please visit: [LMSYS Chatbot Arena Leaderboard](https://chat.lmsys.org/?leaderboard).
+---
 
-## Tool Use
+## Dynamic Model Categories
 
-Certain LLMs on our platform support tool use capabilities. This feature allows AI agents to perform a variety of tasks beyond text generation, enabling them to interact dynamically with external systems and datasets. As the field of AI continues to advance, we anticipate that tool use capabilities will become standard across all LLMs.
+These dynamic categories are continually updated by our team to deliver optimal performance and efficiency:
 
-## Speed Metrics
+| Category      | Description                                                                                                |
+| :------------ | :--------------------------------------------------------------------------------------------------------- |
+| **Auto**      | Balanced performance model optimized for general use and stability                                         |
+| **Smartest**  | Always uses the highest-performing available LLM, automatically updating when superior models are released |
+| **Efficient** | Cost-optimized model that maintains smart performance while minimizing resource usage                      |
 
-Speed is determined by two factors:
+_Use these settings for agents that should always run with the latest optimized models._
 
-- Time to first token generation: The latency from when a prompt is sent to when the first piece of output is received.
-- Tokens per second generation: The rate at which the model generates tokens after the initial response has begun.
+---
 
-These metrics are crucial for applications that require real-time interaction or high throughput.
+## Intelligence Elo Rating
 
-## Credits
+Our Elo rating — based on the LMSYS Chatbot Arena Leaderboard — assesses model performance in natural language tasks. Higher ratings signify greater proficiency in generating precise and context-aware responses. For more details, please visit: [LMSYS Chatbot Arena Leaderboard](https://chat.lmsys.org/?leaderboard).
 
-As explained previously, credits are a measure of resource consumption when utilizing LLMs. They correlate with the complexity and size of the models, where lighter models consume fewer points compared to more robust models like GPT-4o/Claude-3.5.
+## Credit consumption
 
-## Selecting the Right LLM for Your Needs
+Credits quantify resource consumption. Typically, more advanced models consume higher credits per 1K tokens.
 
-Choosing an appropriate LLM depends on several factors, including:
+## Vision Capability
 
-1. System message alignment and performance/speed requirements.
-2. Distinct writing styles preferred for your application.
-3. Model responsiveness and speed for real-time interactions.
-4. Language proficiency if operating in languages other than English.
+Selected models support multimodal input (e.g., images). Models with vision capability are marked with a ✅ in the Vision column.
 
-Our platform's flexibility allows users to tailor AI agents for specialized tasks by selecting from these varied LLMs.
+## Tool Use Integration
 
-## Conclusion
-
-Understanding the unique attributes and capabilities of each available LLM on our platform will enable you to make informed decisions about which model best suits your needs. Whether you prioritize eloquence, speed, multilingual support, or cost-effectiveness in terms of credits, our selection aims to meet a comprehensive range of requirements.
+Many models support external API integrations and advanced data operations through built-in tool use features, as indicated by a ✅ in the Tool Use column.
