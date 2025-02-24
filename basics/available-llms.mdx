@@ -11,14 +11,15 @@ Below are the enabled models currently available on our platform – sorted by E
 
 | Model Name        | Provider   | Elo Rating | Context Window | Credits/1K Tokens | Vision | Tool Use |
 | :---------------- | :--------- | ---------: | -------------: | ----------------: | :----: | :------: |
-| ChatGPT-4o Latest | OpenAI     |       1365 |           128k |             4.126 |   ✅   |    ✅    |
-| DeepSeek R1       | DeepSeek   |       1358 |           128k |             5.600 |   ❌   |    ✅    |
+| ChatGPT-4o Latest | OpenAI     |       1365 |           128k |             4.126 |   ✅   |    ❌    |
+| DeepSeek R1       | DeepSeek   |       1358 |           128k |             5.600 |   ❌   |    ❌    |
 | o3-mini           | OpenAI     |       1325 |           200k |             0.908 |   ❌   |    ✅    |
+| DeepSeek V3       | DeepSeek   |       1317 |           128k |             0.630 |   ❌   |    ❌    |
 | Claude 3.5 Sonnet | Anthropic  |       1283 |           200k |             2.615 |   ✅   |    ✅    |
 | GPT-4o mini       | OpenAI     |       1272 |           128k |             0.112 |   ❌   |    ✅    |
 | GPT-4o            | OpenAI     |       1265 |           128k |             2.137 |   ✅   |    ✅    |
 | Mistral Large     | Mistral AI |       1251 |            32k |             1.650 |   ❌   |    ✅    |
-| Llama 3.1 70B     | Meta       |       1247 |           131k |             0.487 |   ❌   |    ✅    |
+| Llama 3.1 70B     | Meta       |       1247 |           131k |             0.487 |   ❌   |    ❌    |
 | Mistral Small     | Mistral AI |       1222 |            32k |             0.165 |   ❌   |    ✅    |
 
 ---
@@ -27,11 +28,11 @@ Below are the enabled models currently available on our platform – sorted by E
 
 These dynamic categories are continually updated by our team to deliver optimal performance and efficiency:
 
-| Category      | Description                                                                                                |
-| :------------ | :--------------------------------------------------------------------------------------------------------- |
-| **Auto**      | Balanced performance model optimized for general use and stability                                         |
-| **Smartest**  | Always uses the highest-performing available LLM, automatically updating when superior models are released |
-| **Efficient** | Cost-optimized model that maintains smart performance while minimizing resource usage                      |
+| Category      | Description                                                                                                               |
+| :------------ | :------------------------------------------------------------------------------------------------------------------------ |
+| **Auto**      | Balanced performance model optimized for general use and stability. LLM must have tool use enabled to be in this category |
+| **Smartest**  | Always uses the highest-performing available LLM, automatically updating when superior models are released                |
+| **Efficient** | Cost-optimized model that maintains smart performance while minimizing resource usage                                     |
 
 _Use these settings for agents that should always run with the latest optimized models._
 
