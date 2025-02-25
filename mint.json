@@ -166,6 +166,7 @@
       "pages": [
         "integrations/overview",
         "integrations/airtable",
+        "integrations/apollo",
         "integrations/google-calendar",
         "integrations/gmail",
         "integrations/google-drive",
